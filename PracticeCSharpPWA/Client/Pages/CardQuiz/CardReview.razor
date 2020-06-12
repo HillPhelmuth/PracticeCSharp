@@ -1,0 +1,39 @@
+﻿@inherits CardReviewModel
+
+    <div class="row">
+       
+        @if (isReady)
+        {
+            <div class="col" style="max-width: 20em ">
+               
+                <ScoreBoard />
+                <br />
+                <button class="btn btn-primary" @onclick="GetNext">Get Next Card</button>
+                <br />
+
+            </div>
+            <div class="col">
+                <Animation Effect="@Effect.FlipInY" Enabled="enabled" OnAnimationEnd="CardAnimEnd">
+                    <div class="flashCard mat-elevation-z24">
+                        <p style="margin:auto">@message</p>
+                        <ul class="list-group-flush">
+                            <li style="background-color:lightblue; font-size:1.6em; margin:auto"><p class="text-center" style="margin:auto"> @DisplayCard.Question </p></li>
+                            @foreach (var answer in Answers)
+                            {
+                                <Animation Effect="Effect.Hinge" Enabled="answer.IsIncorrect" Speed="Speed.Slow">
+                                    <Animation Effect="Effect.Tada" Enabled="answer.IsCorrect" Speed="Speed.Slow">
+                                        <li class="@answer.CssClass" @onclick="@(() => CheckAnswer(answer))">
+                                            @answer.Answer.Replace("<strong>", "").Replace("</strong>", "--")
+                                        </li>
+                                    </Animation>
+                                </Animation>
+                               
+                            }
+                        </ul>
+                    </div>
+                </Animation>
+            </div>
+        }
+    </div>
+
+   

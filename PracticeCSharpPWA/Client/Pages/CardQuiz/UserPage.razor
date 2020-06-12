@@ -1,0 +1,45 @@
+﻿@inherits UserPageModel
+
+<h3 class="text-center">@deckName</h3>
+
+<div class="row">
+    <div class="col">
+        <MatButton Raised="true" OnClick="Reset">
+            Change Quiz Topic
+        </MatButton>
+    </div>
+</div>
+
+@if (!isHideList)
+{
+
+    <div class="col" style="margin: auto; padding-left: 12em; padding-right: 12em">
+        <MatH2>Select Quiz</MatH2>
+        <div class="col" style="margin: auto; font-size: 1.5em">
+            <Animation Effect="Effect.LightSpeedIn" Speed="Speed.Faster">
+                <MatButton Style="font-size: 1.3em; margin-bottom: .5em" Icon="library_books" Label="Strings Quiz" OnClick="@(() => SelectDeck("Strings"))"></MatButton>
+                <br />
+                <MatButton Style="font-size: 1.3em; margin-bottom: .5em" Icon="library_books" Label="Operators Quiz" OnClick="@(() => SelectDeck("Operators"))">
+                </MatButton>
+                <br />
+                <MatButton Style="font-size: 1.3em; margin-bottom: .5em" Icon="library_books" Label="Collections Quiz" OnClick="@(() => SelectDeck("Collections"))">
+                </MatButton>
+                <br />
+                <MatButton Style="font-size: 1.3em; margin-bottom: .5em" Icon="library_books" Label="Access Modifiers Quiz" OnClick="@(() => SelectDeck("AccessModifiers"))">
+                </MatButton><br />
+                <MatButton Style="font-size: 1.3em" Icon="library_books" Label="Control Statements Quiz" OnClick="@(() => SelectDeck("ControlStatements"))">
+                </MatButton>
+                <br />
+
+            </Animation>
+        </div>
+        <br/><br/>
+    </div>
+}
+@if (isSelectDeck)
+{
+    <div class="text-center">
+        <CardReview />
+    </div>
+}
+

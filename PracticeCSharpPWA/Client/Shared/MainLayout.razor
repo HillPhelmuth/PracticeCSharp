@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+@*<div class="sidebar">
+    <NavMenu />
+</div>*@
+
+<div class="main">
+    <MatAppBarContainer>
+        <MatAppBar Style="position:sticky">
+            <div class="top-row px-4 auth">
+                <MatAppBarRow>
+                    <MatAppBarSection>
+                        <MatAppBarTitle Style="color:black">Some C# Learning Tools</MatAppBarTitle>
+                    </MatAppBarSection>
+                    <MatAppBarSection>
+                        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+                    </MatAppBarSection>
+                </MatAppBarRow>
+            </div>
+        </MatAppBar>
+    </MatAppBarContainer>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>

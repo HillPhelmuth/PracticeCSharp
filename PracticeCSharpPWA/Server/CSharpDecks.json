@@ -1,0 +1,704 @@
+{
+  "decks": [
+    {
+      "id": 23,
+      "name": "Collections",
+      "subject": "Arraylist, Hashtable, SortedList, Stack, Queue, Dictionary",
+      "userId": "CSharpDecks@Csharp.Can",
+      "cards": [
+        {
+          "deckId": 23,
+          "question": "Capacity",
+          "answer": "Gets or sets the number of elements that the ArrayList can contain."
+        },
+        {
+          "deckId": 23,
+          "question": "Count",
+          "answer": "Gets the number of elements actually contained in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "IsFixedSize",
+          "answer": "Gets a value indicating whether the ArrayList has a fixed size."
+        },
+        {
+          "deckId": 23,
+          "question": "IsReadOnly",
+          "answer": "Returns whether the ArrayList is read-only"
+        },
+        {
+          "deckId": 23,
+          "question": "Item",
+          "answer": "Gets or sets the element at the specified index"
+        },
+        {
+          "deckId": 23,
+          "question": "Add(object value)",
+          "answer": "Adds an object to the end of the ArrayList"
+        },
+        {
+          "deckId": 23,
+          "question": "AddRange(ICollection c)",
+          "answer": "Adds the elements of an ICollection to the end of the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "Clear();",
+          "answer": "Removes all elements of an ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "Contains(object item)",
+          "answer": "Checks whether an element is in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "GetRange(int index, int count);",
+          "answer": "Returns an ArrayList which represents a subset of the elements in the source ArrayList"
+        },
+        {
+          "deckId": 23,
+          "question": "IndexOf(object);",
+          "answer": "Returns the zero-based index of the first occurrence of a value in the ArrayList or in a portion of it"
+        },
+        {
+          "deckId": 23,
+          "question": "Insert(int index, object value);",
+          "answer": "Inserts an element into the ArrayList at the specified index."
+        },
+        {
+          "deckId": 23,
+          "question": "InsertRange(int index, ICollection c);",
+          "answer": "Inserts the elements of a collection into the ArrayList at the specified index."
+        },
+        {
+          "deckId": 23,
+          "question": "Remove(object obj);",
+          "answer": "Removes the first occurrence of a specific object from the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "RemoveAt(int index);",
+          "answer": "Removes the element at the specified index of the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "RemoveRange(int index, int count);",
+          "answer": "Removes a range of elements from the ArrayList"
+        },
+        {
+          "deckId": 23,
+          "question": "Reverse();",
+          "answer": "Reverses the order of the elements in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "SetRange(int index, ICollection c);",
+          "answer": "Copies the elements of a collection over a range of elements in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "Sort()",
+          "answer": "Sorts the elements in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "TrimToSize();",
+          "answer": "Sets the capacity to the actual number of elements in the ArrayList."
+        },
+        {
+          "deckId": 23,
+          "question": "Keys",
+          "answer": "Gets an ICollection containing the keys in the Hashtable"
+        },
+        {
+          "deckId": 23,
+          "question": "Values",
+          "answer": "Gets an ICollection containing the values in the Hashtable"
+        },
+        {
+          "deckId": 23,
+          "question": "Add(object key, object value);",
+          "answer": "Adds an element with the specified key and value into the Hashtable"
+        },
+        {
+          "deckId": 23,
+          "question": "ContainsKey(object key);",
+          "answer": "Determines whether the Hashtable contains a specific key."
+        },
+        {
+          "deckId": 23,
+          "question": "ContainsValue(object value);",
+          "answer": "Determines whether the Hashtable contains a specific value."
+        },
+        {
+          "deckId": 23,
+          "question": "Remove(object key);",
+          "answer": "Removes the element with the specified key from the Hashtable."
+        },
+        {
+          "deckId": 23,
+          "question": "GetByIndex(int index);",
+          "answer": "Gets the value at the specified index of the SortedList."
+        },
+        {
+          "deckId": 23,
+          "question": "GetKey(int index);",
+          "answer": "Gets the key at the specified index of the SortedList."
+        },
+        {
+          "deckId": 23,
+          "question": "GetKeyList();",
+          "answer": "Returns list of keys in the SortedList"
+        },
+        {
+          "deckId": 23,
+          "question": "GetValueList();",
+          "answer": "Returns list of values in the SortedList"
+        },
+        {
+          "deckId": 23,
+          "question": "IndexOfKey(object key);",
+          "answer": "Returns the zero-based index of the specified key in the SortedList."
+        },
+        {
+          "deckId": 23,
+          "question": "IndexOfValue(object value);",
+          "answer": "Returns the zero-based index of the first occurrence of the specified value in the SortedList."
+        },
+        {
+          "deckId": 23,
+          "question": "Contains(object obj);",
+          "answer": "Checks if an element is in the Stack."
+        },
+        {
+          "deckId": 23,
+          "question": "Peek();",
+          "answer": "Returns the object at the top of the Stack without removing it"
+        },
+        {
+          "deckId": 23,
+          "question": "Pop();",
+          "answer": "Removes and returns the object at the top of the Stack."
+        },
+        {
+          "deckId": 23,
+          "question": "Push(object obj);",
+          "answer": "Inserts an object at the top of the Stack."
+        },
+        {
+          "deckId": 23,
+          "question": "ToArray();",
+          "answer": "Copies the Stack to a new array."
+        },
+        {
+          "deckId": 23,
+          "question": "Dequeue();",
+          "answer": "Removes and returns the object at the beginning of the Queue."
+        },
+        {
+          "deckId": 23,
+          "question": "Enqueue(object obj);",
+          "answer": "Adds an object to the end of the Queue."
+        },
+        {
+          "deckId": 23,
+          "question": "ContainsKey",
+          "answer": "Checks if the specified key exists in Dictionary<TKey, TValue>."
+        },
+        {
+          "deckId": 23,
+          "question": "ContainsValue",
+          "answer": "Checks if the specified value exists in Dictionary<TKey, TValue>"
+        },
+        {
+          "deckId": 23,
+          "question": "TryGetValue",
+          "answer": "Returns true and assigns the value with specified key, if key does not exists then return false."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "AccessModifiers",
+      "subject": "c# Access Modifiers",
+      "userId": "CSharpDecks@Csharp.Can",
+      "cards": [
+        {
+          "deckId": 22,
+          "question": "public",
+          "answer": "field or function accessible by any other code in the same assembly or another assembly that references it"
+        },
+        {
+          "deckId": 22,
+          "question": "private",
+          "answer": "Only available by code in the same class or struct"
+        },
+        {
+          "deckId": 22,
+          "question": "protected",
+          "answer": "Only accessible by code in the same class or struct or a derived class"
+        },
+        {
+          "deckId": 22,
+          "question": "internal",
+          "answer": "Accessible by any code in the same assembly, but not from another assembly"
+        },
+        {
+          "deckId": 22,
+          "question": "protected internal",
+          "answer": "Accessible by any code in the same assembly, or by any derived class in another assembly"
+        },
+        {
+          "deckId": 22,
+          "question": "abstract",
+          "answer": "to indicate a class that is intended only to be a base class of other classes (has to be extended by other classes)"
+        },
+        {
+          "deckId": 22,
+          "question": "async",
+          "answer": "Indicates that the modified method, lambda expression, or anonymous method is asynchronous"
+        },
+        {
+          "deckId": 22,
+          "question": "const",
+          "answer": "Specifies that the value of the field or the local variable cannot be modified (constant)"
+        },
+        {
+          "deckId": 22,
+          "question": "event",
+          "answer": "Declares an event"
+        },
+        {
+          "deckId": 22,
+          "question": "extern",
+          "answer": "Indicates that the method is implemented externally"
+        },
+        {
+          "deckId": 22,
+          "question": "new",
+          "answer": "Explicitly hides a member inherited from a base class"
+        },
+        {
+          "deckId": 22,
+          "question": "override",
+          "answer": "Provides a new implementation of a virtual member inherited from a base class"
+        },
+        {
+          "deckId": 22,
+          "question": "partial",
+          "answer": "Defines partial classes, structs, and methods throughout the same assembly"
+        },
+        {
+          "deckId": 22,
+          "question": "read-only",
+          "answer": "Declares a field that can only be assigned values as part of the declaration or in a constructor in the same class"
+        },
+        {
+          "deckId": 22,
+          "question": "sealed",
+          "answer": "Specifies that a class cannot be inherited"
+        },
+        {
+          "deckId": 22,
+          "question": "static",
+          "answer": "Declares a member that belongs to the type itself instead of to a specific object, e.g., for static class or method, no object needs to be created"
+        },
+        {
+          "deckId": 22,
+          "question": "unsafe",
+          "answer": "Declares an unsafe context"
+        },
+        {
+          "deckId": 22,
+          "question": "virtual",
+          "answer": "Declares a method or an accessor whose implementation can be changed by an overriding member in a derived class"
+        },
+        {
+          "deckId": 22,
+          "question": "volatile",
+          "answer": "Indicates that a field can be modified in the program by something such as the operating system, the hardware, or a concurrently executing thread"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Strings",
+      "subject": "C# String class",
+      "userId": "CSharpDecks@Csharp.Can",
+      "cards": [
+        {
+          "deckId": 20,
+          "question": "Chars",
+          "answer": "Gets the Char object at a specified position in the current String object."
+        },
+        {
+          "deckId": 20,
+          "question": "Length",
+          "answer": "Gets the number of characters in the current String object."
+        },
+        {
+          "deckId": 20,
+          "question": "public static int Compare(string strA, string strB)",
+          "answer": "Compares two specified string objects and returns an integer that indicates their relative position in the sort order."
+        },
+        {
+          "deckId": 20,
+          "question": "public static int Compare(string strA, string strB, bool ignoreCase )",
+          "answer": "Compares two specified string objects and returns an integer that indicates their relative position in the sort order. However, it ignores case if the Boolean parameter is true."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Concat(string str0, string str1)",
+          "answer": "Concatenates two string objects."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Concat(string str0, string str1, string str2)",
+          "answer": "Concatenates three string objects."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Concat(string str0, string str1, string str2, string str3)",
+          "answer": "Concatenates four string objects."
+        },
+        {
+          "deckId": 20,
+          "question": "public bool Contains(string value)",
+          "answer": "Returns a value indicating whether the specified String object occurs within this string."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Copy(string str)",
+          "answer": "Creates a new String object with the same value as the specified string."
+        },
+        {
+          "deckId": 20,
+          "question": "public void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count)",
+          "answer": "Copies a specified number of characters from a specified position of the String object to a specified position in an array of Unicode characters."
+        },
+        {
+          "deckId": 20,
+          "question": "public bool EndsWith(string value)",
+          "answer": "Determines whether the end of the string object matches the specified string."
+        },
+        {
+          "deckId": 20,
+          "question": "public bool Equals(string value)",
+          "answer": "Determines whether the current String object and the specified String object have the same value."
+        },
+        {
+          "deckId": 20,
+          "question": "public static bool Equals(string a, string b)",
+          "answer": "Determines whether two specified String objects have the same value."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Format(string format, Object arg0)",
+          "answer": "Replaces one or more format items in a specified string with the string representation of a specified object."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOf(char value)",
+          "answer": "Returns the zero-based index of the first occurrence of the specified Unicode character in the current string."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOf(string value)",
+          "answer": "Returns the zero-based index of the first occurrence of the specified string in this instance."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOf(char value, int startIndex)",
+          "answer": "Returns the zero-based index of the first occurrence of the specified Unicode character in this string, starting search at the specified character position."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOf(string value, int startIndex)",
+          "answer": "Returns the zero-based index of the first occurrence of the specified string in this instance, starting search at the specified character position."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOfAny(char[] anyOf)",
+          "answer": "Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters."
+        },
+        {
+          "deckId": 20,
+          "question": "public int IndexOfAny(char[] anyOf, int startIndex)",
+          "answer": "Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters, starting search at the specified character position."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Insert(int startIndex, string value)",
+          "answer": "Returns a new string in which a specified string is inserted at a specified index position in the current string object."
+        },
+        {
+          "deckId": 20,
+          "question": "public static bool IsNullOrEmpty(string value)",
+          "answer": "Indicates whether the specified string is null or an Empty string."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Join(string separator, params string[] value)",
+          "answer": "Concatenates all the elements of a string array, using the specified separator between each element."
+        },
+        {
+          "deckId": 20,
+          "question": "public static string Join(string separator, string[] value, int startIndex, int count)",
+          "answer": "Concatenates the specified elements of a string array, using the specified separator between each element."
+        },
+        {
+          "deckId": 20,
+          "question": "public int LastIndexOf(char value)",
+          "answer": "Returns the zero-based index position of the last occurrence of the specified Unicode character within the current string object."
+        },
+        {
+          "deckId": 20,
+          "question": "public int LastIndexOf(string value)",
+          "answer": "Returns the zero-based index position of the last occurrence of a specified string within the current string object."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Remove(int startIndex)",
+          "answer": "Removes all the characters in the current instance, beginning at a specified position and continuing through the last position, and returns the string."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Remove(int startIndex, int count)",
+          "answer": "Removes the specified number of characters in the current string beginning at a specified position and returns the string."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Replace(char oldChar, char newChar)",
+          "answer": "Replaces all occurrences of a specified Unicode character in the current string object with the specified Unicode character and returns the new string."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Replace(string oldValue, string newValue)",
+          "answer": "Replaces all occurrences of a specified string in the current string object with the specified string and returns the new string."
+        },
+        {
+          "deckId": 20,
+          "question": "public string[] Split(params char[] separator)",
+          "answer": "Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array."
+        },
+        {
+          "deckId": 20,
+          "question": "public string[] Split(char[] separator, int count)",
+          "answer": "Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array. The int parameter specifies the maximum number of substrings to return."
+        },
+        {
+          "deckId": 20,
+          "question": "public bool StartsWith(string value)",
+          "answer": "Determines whether the beginning of this string instance matches the specified string."
+        },
+        {
+          "deckId": 20,
+          "question": "public char[] ToCharArray()",
+          "answer": "Returns a Unicode character array with all the characters in the current string object."
+        },
+        {
+          "deckId": 20,
+          "question": "public char[] ToCharArray(int startIndex, int length)",
+          "answer": "Returns a Unicode character array with all the characters in the current string object, starting from the specified index and up to the specified length."
+        },
+        {
+          "deckId": 20,
+          "question": "public string ToLower()",
+          "answer": "Returns a copy of this string converted to lowercase."
+        },
+        {
+          "deckId": 20,
+          "question": "public string ToUpper()",
+          "answer": "Returns a copy of this string converted to uppercase."
+        },
+        {
+          "deckId": 20,
+          "question": "public string Trim()",
+          "answer": "Removes all leading and trailing white-space characters from the current String object."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Operators",
+      "subject": "C# Operators",
+      "userId": "CSharpDecks@Csharp.Can",
+      "cards": [
+        {
+          "deckId": 21,
+          "question": "Operator =",
+          "answer": "Assigns variable value."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator +",
+          "answer": "Adds a value or variable."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator -",
+          "answer": "Subtracts values or variables."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator *",
+          "answer": "Multiplies values or variables."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator /",
+          "answer": "Divides values or variables. (i/j)"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator +=",
+          "answer": "Increments a variable."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator -=",
+          "answer": "Decrements a variable."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator ==",
+          "answer": "Equality. Returns true if values are equal."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator !=",
+          "answer": "Inequality. Returns true if values are not equal."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator <",
+          "answer": "Less Than"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator >",
+          "answer": "Greater Than"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator <=",
+          "answer": "Less Than or Equal to"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator >=",
+          "answer": "Greater than equal to"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator + \"\"",
+          "answer": "String concatenation "
+        },
+        {
+          "deckId": 21,
+          "question": "Operator .",
+          "answer": "Call methods, constant variables etc.."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator ()",
+          "answer": "Calculations, passing parameters etc…"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator []",
+          "answer": "Access values in arrays or collections."
+        },
+        {
+          "deckId": 21,
+          "question": "Operator !",
+          "answer": "Reversing Boolean value"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator &&",
+          "answer": "Logical AND"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator sizeof()",
+          "answer": "returns the size of a data type"
+        },
+        {
+          "deckId": 21,
+          "question": "Operator typeof()",
+          "answer": "returns the type of object – string, integer etc…"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "ControlStatements",
+      "subject": "C# Control statements and loops",
+      "userId": "CSharpDecks@Csharp.Can",
+      "cards": [
+        {
+          "deckId": 21,
+          "question": "If Statements",
+          "answer": "Used to specify a block of code to be executed, if a specified condition is true"
+        },
+        {
+          "deckId": 21,
+          "question": "If - Else Statements",
+          "answer": "Used to specify a block of code to be executed, if the same condition is false."
+        },
+        {
+          "deckId": 21,
+          "question": "Switch Statement",
+          "answer": "evaluates one variable to execute other code for any number of variable values."
+        },
+        {
+          "deckId": 21,
+          "question": "Case",
+          "answer": "Evaluates the variable of a switch statement to a specific value and executes code if it evaluates to true."
+        },
+        {
+          "deckId": 21,
+          "question": "else if statement",
+          "answer": "Used to specify a new condition to test, if the first condition is false"
+        },
+        {
+          "deckId": 21,
+          "question": "while loop",
+          "answer": "Continuously loops code until the condition becomes false"
+        },
+        {
+          "deckId": 21,
+          "question": "for loop",
+          "answer": "loops code for a specific number of iterations."
+        },
+        {
+          "deckId": 21,
+          "question": "foreach loop",
+          "answer": "loops code for every instance of a collection"
+        },
+        {
+          "deckId": 21,
+          "question": "break",
+          "answer": "used to jump out of a loop code block or a switch statement."
+        },
+        {
+          "deckId": 21,
+          "question": "continue",
+          "answer": "The statement breaks one iteration (in the loop), if a specified condition occurs, and moves to the next iteration in the loop."
+        },
+        {
+          "deckId": 21,
+          "question": "Do/While Loop",
+          "answer": "This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true."
+        },
+        {
+          "deckId": 21,
+          "question": "default",
+          "answer": "Optional and specifies some code to run if there is no case match in a switch statement"
+        }
+      ]
+    }
+  ]
+}

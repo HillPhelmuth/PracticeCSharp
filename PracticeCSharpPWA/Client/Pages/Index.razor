@@ -1,0 +1,80 @@
+﻿@page "/"
+@inject CodeEditorService CodeEditorService
+
+@using PracticeCSharpPWA.Shared.Models.CodeEditorModels
+
+<MatAccordion>
+    <MatTabGroup>
+        <MatTab Label="Home">
+            <MatH3>Problem of the day</MatH3>
+            <p>Coming soon</p>
+            <p>Sample our learning tools</p>
+            @*<p>Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid. All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.</p>
+
+            <p style="font-weight: 600; color:darkblue">
+                What is considered Valid?<br />
+                <span style="font-style:italic">A string of braces is considered valid if all braces are matched with the correct brace.</span>
+            </p>
+            <p>
+                <MatH5>Examples</MatH5>
+            </p>
+            <p style="background-color: black; color:white">
+                "(){}[]"   =>  True<br />
+                "([{}])"   =>  True<br />
+                "(}"       =>  False<br />
+                "[(])"     =>  False<br />
+                "[({})](]" =>  False
+            </p>
+            <MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
+            @if (takeChallenge)
+            {
+                <MonacoEdit CodeSnippet="@codeSnippet" />
+            }*@
+        </MatTab>
+        <MatTab Label="Practice C#(Repl and Monaco)">
+            <CodeHome />
+        </MatTab>
+        <MatTab Label="Watch C# Videos">
+            <VideoHome />
+        </MatTab>
+        @*<MatTab Label="C# Quiz">
+            <FlashCardHome />
+        </MatTab>*@
+    </MatTabGroup>
+</MatAccordion>
+@code
+{
+    protected bool isAnimate = true;
+    protected string CodeOutput;
+    protected string codeSnippet;
+    bool takeChallenge = false;
+
+    void SolveChallenge()
+    {
+        takeChallenge = !takeChallenge;
+    }
+    protected override Task OnInitializedAsync()
+    {
+        CodeEditorService.OnChange += StateHasChanged;
+        return base.OnInitializedAsync();
+    }
+    protected void HandleOutputChange(string output)
+    {
+        CodeOutput = output;
+        isAnimate = true;
+        StateHasChanged();
+    }
+
+    protected Task UpdateCodeSnippet()
+    {
+        codeSnippet = CodeSnippets.PUZZLEOFDAY;
+        CodeEditorService.UpdateSnippet(codeSnippet);
+        StateHasChanged();
+
+        return Task.CompletedTask;
+    }
+
+    protected void ToggleAnimation() => isAnimate = false;
+
+    //public void Dispose() => CodeEditorService.OnChange -= StateHasChanged;
+}

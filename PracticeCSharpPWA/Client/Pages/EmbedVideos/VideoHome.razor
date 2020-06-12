@@ -1,0 +1,27 @@
+﻿
+<MatH3>Select a topic to view top YouTube training videos</MatH3>
+<MatButton Label="Collections" OnClick="@CollectClick" RefBack="@CollectionsForwardRef"/>
+<MatMenu @ref="Collections"  TargetForwardRef="@CollectionsForwardRef">
+    <MatList>
+        <MatListItem @onclick="@(() => selectedList = CollectionsVideos1)">Intro to Collections</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = CollectionsVideos2)">Intermediate Collections</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = CollectionsVideos3)">Advanced Collections</MatListItem>
+    </MatList>
+</MatMenu>
+<MatButton Label="Strings" OnClick="@StringsClick" RefBack="StringsForwardRef" />
+<MatMenu  @ref="Strings"  TargetForwardRef="@StringsForwardRef">
+    <MatList>
+        <MatListItem @onclick="@(() => selectedList = StringsVideos1)">Intro to Strings</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = StringsVideos2)">Intermediate Strings</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = StringsVideos3)">Advanced Strings</MatListItem>
+    </MatList>
+</MatMenu>
+<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="PlayVideos">Watch</button>
+
+@if (IsVideoReady)
+{
+    <CascadingValue Value="selectedList">
+        <VideoPlayer />
+    </CascadingValue>
+}
+
