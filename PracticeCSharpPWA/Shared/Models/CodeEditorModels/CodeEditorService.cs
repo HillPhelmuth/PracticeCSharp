@@ -19,6 +19,7 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
             NotifyStateChanged();
         }
 
+        
         public void UpdateCurrentOutput(string output)
         {
             CurrentOutput = output;
@@ -36,6 +37,8 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
             MonacoCode = code;
             NotifyEvaluate();
         }
+
+        
 
         private void NotifyStateChanged() => OnChange?.Invoke();
         private async void NotifyEvaluate()

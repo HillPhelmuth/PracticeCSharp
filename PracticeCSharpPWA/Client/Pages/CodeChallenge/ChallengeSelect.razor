@@ -1,0 +1,15 @@
+﻿
+<MatSelectItem @bind-Value="selectedPuzzle" Items="puzzles"></MatSelectItem>
+<p>Selected: @selectedPuzzle</p>
+<MatButton Raised="true" Label="Select challenge" OnClick="SelectPuzzle"></MatButton>
+@if (isPuzzleSelected)
+{
+    @((MarkupString) description)
+    <br/>
+    <p>
+        <MatH5>Examples</MatH5>
+    </p>
+    <p style="background-color: black; color: white">
+        @((MarkupString) examples)
+    </p>
+}

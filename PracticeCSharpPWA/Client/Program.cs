@@ -22,6 +22,7 @@ namespace PracticeCSharpPWA.Client
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddSingleton<DeckStateService>();
             builder.Services.AddSingleton<CodeEditorService>();
+            builder.Services.AddSingleton<CompilerService>();
             await builder.Build().RunAsync();
         }
     }

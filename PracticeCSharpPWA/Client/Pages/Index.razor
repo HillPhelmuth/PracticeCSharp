@@ -6,30 +6,34 @@
 <MatAccordion>
     <MatTabGroup>
         <MatTab Label="Home">
-            <MatH3>Problem of the day</MatH3>
-            <p>Coming soon</p>
-            <p>Sample our learning tools</p>
-            @*<p>Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid. All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.</p>
+            <MatH4>Check out some C# learning tools, including:</MatH4>
+            <MatList SingleSelection="true" TwoLine="true">
+                <MatListItem>
+                    <MatListItemText>
+                        <MatListItemPrimaryText>Code Challenges</MatListItemPrimaryText>
+                        <MatListItemSecondaryText>Practice c# by taking some basic coding challenges
+                            </MatListItemSecondaryText>
+                    </MatListItemText>
+                </MatListItem>
+                <MatListDivider></MatListDivider>
+                <MatListItem>
+                    <MatListItemText>
+                        <MatListItemPrimaryText>Practice c#</MatListItemPrimaryText>
+                        <MatListItemSecondaryText>Use a c# REPL to compile c# line-by-line or use a Monaco Editor with a variety of starting code snippets</MatListItemSecondaryText>
+                    </MatListItemText>
+                </MatListItem>
+                <MatListDivider></MatListDivider>
+                <MatListItem>
+                    <MatListItemText>
+                        <MatListItemPrimaryText>Watch C# Videos</MatListItemPrimaryText>
+                        <MatListItemSecondaryText>Select from a variety of Topics to watch YouTube training videos</MatListItemSecondaryText>
+                    </MatListItemText>
+                </MatListItem>
+            </MatList>
 
-            <p style="font-weight: 600; color:darkblue">
-                What is considered Valid?<br />
-                <span style="font-style:italic">A string of braces is considered valid if all braces are matched with the correct brace.</span>
-            </p>
-            <p>
-                <MatH5>Examples</MatH5>
-            </p>
-            <p style="background-color: black; color:white">
-                "(){}[]"   =>  True<br />
-                "([{}])"   =>  True<br />
-                "(}"       =>  False<br />
-                "[(])"     =>  False<br />
-                "[({})](]" =>  False
-            </p>
-            <MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
-            @if (takeChallenge)
-            {
-                <MonacoEdit CodeSnippet="@codeSnippet" />
-            }*@
+        </MatTab>
+        <MatTab Label="Code Challenges">
+            <CodeChallengeHome />
         </MatTab>
         <MatTab Label="Practice C#(Repl and Monaco)">
             <CodeHome />
@@ -37,9 +41,6 @@
         <MatTab Label="Watch C# Videos">
             <VideoHome />
         </MatTab>
-        @*<MatTab Label="C# Quiz">
-            <FlashCardHome />
-        </MatTab>*@
     </MatTabGroup>
 </MatAccordion>
 @code
@@ -67,7 +68,7 @@
 
     protected Task UpdateCodeSnippet()
     {
-        codeSnippet = CodeSnippets.PUZZLEOFDAY;
+        codeSnippet = CodeSnippets.BRACESPUZZLE;
         CodeEditorService.UpdateSnippet(codeSnippet);
         StateHasChanged();
 
