@@ -9,8 +9,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
     {
         [Inject]
         public CodeEditorService CodeEditorService { get; set; }
-       
-        protected bool importHistory;
+        
         protected bool isAnimate = true;
         protected string CodeOutput;
         protected string codeSnippet;

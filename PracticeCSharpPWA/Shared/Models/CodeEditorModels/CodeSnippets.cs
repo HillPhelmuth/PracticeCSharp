@@ -39,6 +39,9 @@
         public const string SWITCH = "char[] chars = { 'C', 'S', 'h', 'a', 'r', 'p' };\nstring name = new string(chars);\nint nameLength = name.Length;\nswitch (nameLength)\n{\n\tcase 7:\n\t\tname = $\"{name} is sometimes easy\";\n\t\tbreak;\n\tcase 8:\n\t\tname = $\"{name} is sometimes hard\";\n\t\tbreak;\n\tdefault:\n\t\tname = $\"{name} is always c#\";\n\t\tbreak;\n}\nreturn name;";
         public const string FORLOOP = "char[] chars = { 'C', 'S', 'h', 'a', 'r', 'p' };\nstring name = new string(chars);\nfor (int i = 0; i < chars.Length; i++)\n{\n\tname = name + \"!\";\n}\nreturn name;";
         public const string FOREACHLOOP = "char[] chars = { 'C', 'S', 'h', 'a', 'r', 'p' };\nstring name = \"\";\nforeach (var str in chars)\n{\n\tname += str;\n}\nreturn name;\n";
-        public const string PUZZLEOFDAY = "public static bool validBraces(String braces)\n{\n\treturn false;\n}";
+        public const string BRACESPUZZLE = "public static bool validBraces(String braces)\n{\n\treturn false;\n}";
+        public const string PRIMEPUZZLE = "public static bool IsPrime(int n)\n{\n\treturn false;\n}";
+        public const string ROT13PUZZLE = "public static string Rot13(string message)\n{\n\t// your code here\n}";
     }
+    
 }

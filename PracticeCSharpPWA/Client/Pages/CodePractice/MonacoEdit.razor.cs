@@ -20,18 +20,13 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         //protected HackerEarthResponse HackerEarthResponse { get; set; }
         protected bool IsCodeReady { get; set; }
         protected MonacoEditor Editor { get; set; }
-        [Parameter]
-        public MonacoEditor Editor2 { get; set; }
         protected string ValueToSet { get; set; }
-        private static readonly string _language = "csharp";
         [Parameter]
         public EventCallback<string> OnCodeSubmit { get; set; }
         [Parameter]
         public string CodeSnippet { get; set; }
-
-        
-
-        
+        [Parameter]
+        public bool IsPuzzle { get; set; }
 
         protected override Task OnInitializedAsync()
         {
@@ -43,6 +38,12 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         public async Task SubmitCode()
         {
             var code = await Editor.GetValue();
+            if (IsPuzzle)
+            {
+                await OnCodeSubmit.InvokeAsync(code);
+                Console.WriteLine($"puzzle submission: {code}");
+                return;
+            }
             CodeEditorService.EvaluateCode(code);
         }
 
@@ -73,19 +74,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             };
         }
 
-        //protected async Task EvaluateCode()
-        //{
-        //    var query = new QueryModel
-        //    {
-        //        SearchString = null,
-        //        SourceCode = await Editor.GetValue(),
-        //        Language = "CSHARP",
-        //        CodeInput = ValueToSet
-        //    };
-        //    var response = await Http.PostAsJsonAsync("HackerEarth", query);
-        //    HackerEarthResponse = await response.Content.ReadFromJsonAsync<HackerEarthResponse>();
-
-        //}
+        
         protected async Task EditorOnDidInit(MonacoEditor editor)
         {
             await Editor.AddCommand((int)KeyMode.CtrlCmd | (int)KeyCode.KEY_H, (editor, keyCode) =>

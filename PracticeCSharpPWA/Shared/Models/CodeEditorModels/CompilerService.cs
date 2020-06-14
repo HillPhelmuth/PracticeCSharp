@@ -2,93 +2,40 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Scripting.Hosting;
-using PracticeCSharpPWA.Client.Shared;
-using PracticeCSharpPWA.Shared.Models.CodeEditorModels;
 
-namespace PracticeCSharpPWA.Client.Pages.CodePractice
+namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
 {
-    public partial class ReplShell : ComponentBase
+    public class CompilerService
     {
-        [Inject]
-        protected NavigationManager NavigationManager { get; set; }
-        [Inject]
-        public CodeEditorService CodeEditorService { get;  set; }
         public string InfoOutput { get; set; } = "";
-        public string Input { get; set; } = "";
         protected CSharpCompilation runningCompilation;
-        protected IEnumerable<MetadataReference> references;
+        protected IEnumerable<MetadataReference> _references;
         protected object[] submissionStates = { null, null };
         protected int submissionIndex = 0;
-        protected List<string> history = new List<string>();
-        protected int historyIndex = 0;
-        protected string CodeOutput { get; set; }
-        [Parameter]
-        public EventCallback<string> CodeOutputChanged { get; set; }
         
-        protected override async Task OnInitializedAsync()
-        {
-            var refs = AppDomain.CurrentDomain.GetAssemblies();
-            var client = new HttpClient {BaseAddress = new Uri(NavigationManager.BaseUri)};
+        public EventCallback<string> CodeOutputChanged { get; set; }
 
-            var assemblyRefs = new List<MetadataReference>();
 
-            foreach (var reference in refs.Where(x => !x.IsDynamic && !string.IsNullOrWhiteSpace(x.Location)))
-            {
-                var stream = await client.GetStreamAsync($"_framework/_bin/{reference.Location}");
-                assemblyRefs.Add(MetadataReference.CreateFromStream(stream));
-            }
-            references = assemblyRefs;
-            CodeEditorService.Evaluate += SubmitMonaco;
-        }
-        protected void OnKeyDown(KeyboardEventArgs e)
-        {
-            switch (e.Key)
-            {
-                case "ArrowUp" when historyIndex > 0:
-                    historyIndex--;
-                    Input = history[historyIndex];
-                    break;
-                case "ArrowDown" when historyIndex + 1 < history.Count:
-                    historyIndex++;
-                    Input = history[historyIndex];
-                    break;  
-                case "Escape":
-                    Input = "";
-                    historyIndex = history.Count;
-                    break;
-            }
-        }
-        public async Task SubmitMonaco()
-        {
-            var code = CodeEditorService.MonacoCode;
-            await RunSubmission(code);
-            StateHasChanged();
-        }
-        public async Task Run(KeyboardEventArgs e)
-        {
-            if (e.Key != "Enter")
-                return;
+        public string CodeOutput { get; set; }
 
-            var code = Input;
-            if (!string.IsNullOrEmpty(code))
-                history.Add(code);
-            historyIndex = history.Count;
-            Input = "";
-            CodeComponentBase.HistoryShared = history;
-            await RunSubmission(code);
-        }
-        public async Task RunSubmission(string code)
+        public async Task<bool> SubmitPuzzle(string code, IEnumerable<MetadataReference> references, string testAgainst = "true")
         {
+            await RunSubmission(code, references);
+            Console.WriteLine($"Code output: {CodeOutput}");
+            return CodeOutput.Contains(testAgainst);
+        }
+        public async Task RunSubmission(string code, IEnumerable<MetadataReference> references)
+        {
+            _references = references;
             InfoOutput += $@"<br /><span class=""info"">{HttpUtility.HtmlEncode(code)}</span>";
 
 
@@ -156,7 +103,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             var scriptCompilation = CSharpCompilation.CreateScriptCompilation(
                 Path.GetRandomFileName(),
                 CSharpSyntaxTree.ParseText(source, CSharpParseOptions.Default.WithKind(SourceCodeKind.Script).WithLanguageVersion(LanguageVersion.Preview)),
-                references,
+                _references,
                 new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, usings: new[]
                 {
                     "System",
@@ -191,5 +138,12 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             return true;
 
         }
+    }
+
+    public enum Puzzle
+    {
+        Braces,
+        Prime,
+        Rot13
     }
 }

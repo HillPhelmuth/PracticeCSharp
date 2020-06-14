@@ -1,0 +1,23 @@
+﻿<h3>Code Challenge</h3>
+@if (takeChallenge)
+{
+    <MatButton OnClick="ChangePuzzle" Label="New Puzzle"></MatButton>
+}
+@if (isPuzzleSucceed)
+{
+    <MatH3>Success!</MatH3>
+}
+@if (isPuzzleFail)
+{
+    <MatH3 Style="color:red">Fail!</MatH3>
+}
+@if (!takeChallenge)
+{
+    <ChallengeSelect OnPuzzleChanged="HandlePuzzleChanged" />
+}
+<MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
+@if (takeChallenge)
+{
+    <MonacoEdit IsPuzzle="true" OnCodeSubmit="HandleCodeSubmit" CodeSnippet="@CodeSnippet" />
+}
+

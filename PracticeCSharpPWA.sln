@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeCSharpPWA.Server", "PracticeCSharpPWA\Server\PracticeCSharpPWA.Server.csproj", "{7FE47F70-D5AE-40F3-A29F-2E5283A7F381}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeCSharpPWA.Server", "PracticeCSharpPWA\Server\PracticeCSharpPWA.Server.csproj", "{7FE47F70-D5AE-40F3-A29F-2E5283A7F381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeCSharpPWA.Client", "PracticeCSharpPWA\Client\PracticeCSharpPWA.Client.csproj", "{6DF8E54B-64ED-4216-91CB-D3500DAC1093}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeCSharpPWA.Client", "PracticeCSharpPWA\Client\PracticeCSharpPWA.Client.csproj", "{6DF8E54B-64ED-4216-91CB-D3500DAC1093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeCSharpPWA.Shared", "PracticeCSharpPWA\Shared\PracticeCSharpPWA.Shared.csproj", "{9AB15F33-F875-44BA-884F-7DEC439A5D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeCSharpPWA.Shared", "PracticeCSharpPWA\Shared\PracticeCSharpPWA.Shared.csproj", "{9AB15F33-F875-44BA-884F-7DEC439A5D39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

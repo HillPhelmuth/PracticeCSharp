@@ -18,7 +18,7 @@ namespace PracticeCSharpPWA.Server.Controllers
         {
             var deckList = JsonConvert.DeserializeObject<DeckList>(System.IO.File.ReadAllText("CSharpDecks.json"));
             return deckList.Decks;
-            //return _flashCardsDb.GetUserDecks().Result;
+            
         }
         [HttpGet("{name}")]
         public Deck GetDeck(string name)
@@ -26,7 +26,7 @@ namespace PracticeCSharpPWA.Server.Controllers
             var deckList = JsonConvert.DeserializeObject<DeckList>(System.IO.File.ReadAllText("CSharpDecks.json"));
 
             return deckList.Decks.Find(x => x.Name == name);
-            //return _flashCardsDb.GetUserDecks().Result;
+           
         }
     }
 }
