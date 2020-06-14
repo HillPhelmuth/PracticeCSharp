@@ -1,4 +1,8 @@
-﻿window.removeYouTube = () => {
+﻿window.removeMonaco = () => {
+    var elem = document.querySelector('#learnCsharp');
+    elem.parentNode.removeChild(elem);
+}
+window.removeYouTube = () => {
     var elem = document.querySelector('#player');
     elem.parentNode.removeChild(elem);
 }

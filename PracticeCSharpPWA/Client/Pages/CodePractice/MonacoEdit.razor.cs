@@ -96,6 +96,10 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             StateHasChanged();
         }
 
-        public void Dispose() => CodeEditorService.OnChange -= StateHasChanged;
+        public void Dispose()
+        {
+            CodeEditorService.OnChange -= StateHasChanged;
+            CodeEditorService.OnSnippetChange -= UpdateSnippet;
+        }
     }
 }

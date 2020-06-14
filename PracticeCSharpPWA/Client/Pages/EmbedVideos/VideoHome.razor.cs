@@ -14,18 +14,24 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
         public List<VideoModel> StringsVideos1 { get; set; }
         public List<VideoModel> StringsVideos2 { get; set; }
         public List<VideoModel> StringsVideos3 { get; set; }
+        public List<VideoModel> ConditionalsLoops1 { get; set; }
+        public List<VideoModel> ConditionalsLoops2 { get; set; }
+        public List<VideoModel> ConditionalsLoops3 { get; set; }
         protected List<VideoModel> selectedList { get; set; }
         protected bool IsVideoReady;
         protected bool isVideoSelection;
         protected ForwardRef CollectionsForwardRef = new ForwardRef();
         protected ForwardRef StringsForwardRef = new ForwardRef();
+        protected ForwardRef ConditionalsLoopsForwardRef = new ForwardRef();
         protected BaseMatMenu Collections;
         protected BaseMatMenu Strings;
+        protected BaseMatMenu ConditionalsLoops;
 
         protected override Task OnInitializedAsync()
         {
             GenerateCollectionsVideos();
             GenerateStringsVideos();
+            GenerateConditionalLoops();
             return Task.CompletedTask;
         }
         public void CollectClick(MouseEventArgs e)
@@ -35,6 +41,11 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
         public void StringsClick(MouseEventArgs e)
         {
             this.Strings.OpenAsync();
+        }
+
+        public void ConditionalsClick(MouseEventArgs e)
+        {
+            this.ConditionalsLoops.OpenAsync();
         }
         private void GenerateStringsVideos()
         {
@@ -51,13 +62,13 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
             StringsVideos1.Add(new VideoModel
             {
                 Title = "Working With Strings | C# | Tutorial 6",
-                VideoID = "h6_x9Rxh5rU",
+                VideoID = "kEw3uV4dpXE",
                 PreferenceID = 0
             });
             StringsVideos2.Add(new VideoModel
             {
                 Title = "C# Programming Tutorial #3 - Strings in Depth",
-                VideoID = "nDdSUUjZ710",
+                VideoID = "aWTw4Qvmkus",
                 PreferenceID = 0
             });
             StringsVideos2.Add(new VideoModel
@@ -120,6 +131,30 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
             {
                 Title = "C# Tutorial 11 Collections",
                 VideoID = "mf7Bn8utej8",
+                PreferenceID = 0
+            });
+        }
+        private void GenerateConditionalLoops()
+        {
+            ConditionalsLoops1 = new List<VideoModel>();
+            ConditionalsLoops2 = new List<VideoModel>();
+            ConditionalsLoops3 = new List<VideoModel>();
+            ConditionalsLoops1.Add(new VideoModel
+            {
+                Title = "",
+                VideoID = "IzzNzSXkCMM",
+                PreferenceID = 0
+            });
+            ConditionalsLoops2.Add(new VideoModel
+            {
+                Title = "",
+                VideoID = "d7lbHiTiIF8",
+                PreferenceID = 0
+            });
+            ConditionalsLoops3.Add(new VideoModel
+            {
+                Title = "",
+                VideoID = "q4csanUFQMo",
                 PreferenceID = 0
             });
         }

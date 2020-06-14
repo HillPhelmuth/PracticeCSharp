@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using BlazorMonaco;
+using BlazorMonaco.Bridge;
 using Microsoft.AspNetCore.Components;
 using Microsoft.CodeAnalysis;
 using PracticeCSharpPWA.Shared.Models.CodeEditorModels;
@@ -56,8 +58,9 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
             StateHasChanged();
         }
 
-        public async Task HandleCodeSubmit(string code)
+        public async Task HandleCodeSubmit()
         {
+            var code = await Editor.GetValue();
             switch (selectedPuzzle)
             {
                 case Puzzle.Braces:
@@ -114,6 +117,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
                 Puzzle.Rot13 => CodeSnippets.ROT13PUZZLE,
                 _ => CodeSnippet
             };
+            Editor.SetValue(CodeSnippet);
             selectedPuzzle = puzzle;
             CodeEditorService.UpdateSnippet(CodeSnippet);
             return Task.CompletedTask;
@@ -127,5 +131,37 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
             StateHasChanged();
         }
         protected void ToggleAnimation() => isAnimate = false;
+        protected MonacoEditor Editor { get; set; }
+        protected StandaloneEditorConstructionOptions EditorOptionsPuzzle(MonacoEditor editor)
+        {
+            return new StandaloneEditorConstructionOptions
+            {
+                AutomaticLayout = true,
+                AutoIndent = true,
+                HighlightActiveIndentGuide = true,
+                Language = "csharp",
+                Value = CodeSnippet ?? "private string MyProgram() \n" +
+                    "{\n" +
+                    "    string input = \"this does not\"; \n" +
+                    "    string modify = input + \" suck!\"; \n" +
+                    "    return modify;\n" +
+                    "}\n" +
+                    "return MyProgram();"
+            };
+        }
+
+
+        protected async Task EditorOnDidInit(MonacoEditor editor)
+        {
+            await Editor.AddCommand((int)KeyMode.CtrlCmd | (int)KeyCode.KEY_H, (editor, keyCode) =>
+            {
+                Console.WriteLine("Ctrl+H : Initial editor command is triggered.");
+            });
+        }
+
+        protected void OnContextMenu(EditorMouseEvent eventArg)
+        {
+            Console.WriteLine("OnContextMenu : " + System.Text.Json.JsonSerializer.Serialize(eventArg));
+        }
     }
 }

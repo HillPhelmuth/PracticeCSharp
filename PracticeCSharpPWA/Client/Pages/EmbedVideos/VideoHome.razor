@@ -16,8 +16,16 @@
         <MatListItem @onclick="@(() => selectedList = StringsVideos3)">Advanced Strings</MatListItem>
     </MatList>
 </MatMenu>
-<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="PlayVideos">Watch</button>
-
+<MatButton Label="Conditionals and loops" OnClick="@ConditionalsClick" RefBack="ConditionalsLoopsForwardRef" />
+<MatMenu @ref="ConditionalsLoops" TargetForwardRef="@ConditionalsLoopsForwardRef">
+    <MatList>
+        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops1)">Conditional Statements</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops2)">Basic Loops</MatListItem>
+        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops3)">Advanced Loops</MatListItem>
+    </MatList>
+</MatMenu>
+<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="PlayVideos">Watch</button><br />
+<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="@(() => IsVideoReady = false)">Close Player</button>
 @if (IsVideoReady)
 {
     <CascadingValue Value="selectedList">
