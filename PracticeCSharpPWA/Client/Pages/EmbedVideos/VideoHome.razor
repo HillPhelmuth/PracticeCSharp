@@ -1,35 +1,32 @@
 ﻿
 <MatH3>Select a topic to view top YouTube training videos</MatH3>
-<MatButton Label="Collections" OnClick="@CollectClick" RefBack="@CollectionsForwardRef"/>
-<MatMenu @ref="Collections"  TargetForwardRef="@CollectionsForwardRef">
-    <MatList>
-        <MatListItem @onclick="@(() => selectedList = CollectionsVideos1)">Intro to Collections</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = CollectionsVideos2)">Intermediate Collections</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = CollectionsVideos3)">Advanced Collections</MatListItem>
-    </MatList>
-</MatMenu>
-<MatButton Label="Strings" OnClick="@StringsClick" RefBack="StringsForwardRef" />
-<MatMenu  @ref="Strings"  TargetForwardRef="@StringsForwardRef">
-    <MatList>
-        <MatListItem @onclick="@(() => selectedList = StringsVideos1)">Intro to Strings</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = StringsVideos2)">Intermediate Strings</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = StringsVideos3)">Advanced Strings</MatListItem>
-    </MatList>
-</MatMenu>
-<MatButton Label="Conditionals and loops" OnClick="@ConditionalsClick" RefBack="ConditionalsLoopsForwardRef" />
-<MatMenu @ref="ConditionalsLoops" TargetForwardRef="@ConditionalsLoopsForwardRef">
-    <MatList>
-        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops1)">Conditional Statements</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops2)">Basic Loops</MatListItem>
-        <MatListItem @onclick="@(() => selectedList = ConditionalsLoops3)">Advanced Loops</MatListItem>
-    </MatList>
-</MatMenu>
-<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="PlayVideos">Watch</button><br />
-<button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="@(() => IsVideoReady = false)">Close Player</button>
 @if (IsVideoReady)
 {
+    <button class="btn btn-primary" style="margin-left:auto; margin-right:auto" @onclick="@(() => HandleVideoEnd(true))">Close Player</button>
     <CascadingValue Value="selectedList">
-        <VideoPlayer />
+        <VideoPlayer VideoId="@selectedVideoId" PlayerReadyChanged="HandleVideoEnd" />
     </CascadingValue>
 }
-
+@if (IsPageVideosReady)
+{
+    <MatAccordion Multi="true">
+        @foreach (var videos in Videos.VideosList)
+        {
+            <MatExpansionPanel>
+                <MatExpansionPanelSummary>
+                    <MatExpansionPanelHeader>Topic: @videos.Name</MatExpansionPanelHeader>
+                </MatExpansionPanelSummary>
+                <MatExpansionPanelDetails>
+                    <div class="text-center">
+                        <MatH4>@videos.Name</MatH4>
+                        @foreach (var video in videos.Videos)
+                        {
+                            <MatButton @onmousedown="@(() => selectedVideoId = video.VideoId)" @onmouseup="PlayVideos">@video.Title</MatButton>
+                            <br />
+                        }
+                    </div>
+                </MatExpansionPanelDetails>
+            </MatExpansionPanel>
+        }
+    </MatAccordion>
+}

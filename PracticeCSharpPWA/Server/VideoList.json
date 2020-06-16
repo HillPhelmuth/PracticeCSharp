@@ -1,0 +1,79 @@
+{
+  "videosList": [
+    {
+      "name": "Intro to Strings",
+      "videos": [
+        {
+          "title": "The Basics of Strings",
+          "videoId": "JSpC7Cz64h0",
+          "preferenceId": 0
+        },
+        {
+          "title": "C# for Beginners - Part 12 - C# Strings Tutorial",
+          "videoId": "tzJjrrOe69c",
+          "preferenceId": 1
+        },
+        {
+          "title": "C# Tutorial 21 - introduction To string",
+          "videoId": "hwbsz29hbPE",
+          "preferenceId": 3
+        },
+        {
+          "title": "Intro to C# 02 - Working with strings",
+          "videoId": "p7JafPO1_RU",
+          "preferenceId": 4
+        }
+      ]
+    },
+    {
+      "name": "Intermediate Strings",
+      "videos": [
+        {
+          "title": "C#.Net Tutorial 5 - Constants, Strings, and String Functions",
+          "videoId": "1_nV-OHsnqE",
+          "preferenceId": 0
+        },
+        {
+          "title": "Interpolated Strings in C# - Quick Tip",
+          "videoId": "xQYmSVbacG4",
+          "preferenceId": 1
+        },
+        {
+          "title": "Learn How To Program In C# Part 28 - String Manipulation",
+          "videoId": "afY8t4Iv-nc",
+          "preferenceId": 3
+        },
+        {
+          "title": "18: String Class Methods in C# | String Methods",
+          "videoId": "-G-yY_EQcL0",
+          "preferenceId": 4
+        }
+      ]
+    },
+    {
+      "name": "Advanced Strings",
+      "videos": [
+        {
+          "title": "C# Tutorial - Encrypt and Decrypt a String",
+          "videoId": "ysxC6-AFEYg",
+          "preferenceId": 0
+        },
+        {
+          "title": "C# Tutorial 49: Encrypt data from simple string in C#",
+          "videoId": "cYLX94DR8_Q",
+          "preferenceId": 1
+        },
+        {
+          "title": "Part 60 C# Tutorial Difference between String and StringBuilder",
+          "videoId": "4lFAs6FYTXg",
+          "preferenceId": 3
+        },
+        {
+          "title": "Regular Expressions (Regex) Tutorial: How to Match Any Pattern of Text",
+          "videoId": "sa-TUpSx1JA",
+          "preferenceId": 4
+        }
+      ]
+    }
+  ] 
+}
