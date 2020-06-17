@@ -21,10 +21,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
         public CompilerService CompilerService { get; set; }
 
         protected Puzzle selectedPuzzle;
-        protected bool isAnimate = true;
-        protected string CodeOutput;
         protected string CodeSnippet;
-        //protected string CodeSubmit;
         bool takeChallenge = false;
         protected bool isPuzzleSucceed;
         protected bool isPuzzleFail;
@@ -51,13 +48,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
         {
             takeChallenge = !takeChallenge;
         }
-        protected void HandleOutputChange(string output)
-        {
-            CodeOutput = output;
-            isAnimate = true;
-            StateHasChanged();
-        }
-
+        
         public async Task HandleCodeSubmit()
         {
             var code = await Editor.GetValue();
@@ -130,7 +121,8 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
             takeChallenge = false;
             StateHasChanged();
         }
-        protected void ToggleAnimation() => isAnimate = false;
+
+        // Monaco Editor Settings
         protected MonacoEditor Editor { get; set; }
         protected StandaloneEditorConstructionOptions EditorOptionsPuzzle(MonacoEditor editor)
         {

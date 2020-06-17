@@ -22,11 +22,6 @@ namespace PracticeCSharpPWA.Shared.Models.FlashCardModels
             await NotifyStateChanged();
         }
 
-        public async Task UpdateUserDecks(List<Deck> decks)
-        {
-            UserDecks = decks.Distinct().ToList();
-            await NotifyStateChanged();
-        }
         public async Task UpdateStats(bool isCorrect)
         {
             if (isCorrect)
@@ -49,26 +44,6 @@ namespace PracticeCSharpPWA.Shared.Models.FlashCardModels
             };
             await NotifyStateChanged();
         }
-        public async Task<DeckStats> GetDeckStats(Deck deck)
-        {
-            return null;
-            //return await Database.GetDeckStats(deck);
-        }
-        public async Task UpdateDeckCards(Deck deck, List<Card> cards)
-        {
-            SelectedDeck = deck;
-            Cards = cards;
-            SelectedDeck.Cards = cards;
-            await NotifyStateChanged();
-        }
-
-        public async Task<List<Deck>> GetUserDecks()
-        {
-            var userDecks = UserDecks;
-            await UpdateUserDecks(userDecks);
-            return userDecks.Distinct().ToList();
-        }
-
         private async Task NotifyStateChanged()
         {
             if (OnChange != null) await OnChange.Invoke();

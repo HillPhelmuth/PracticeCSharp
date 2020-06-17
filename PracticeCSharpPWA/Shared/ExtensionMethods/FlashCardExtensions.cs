@@ -7,7 +7,7 @@ namespace PracticeCSharpPWA.Shared.ExtensionMethods
 {
     public static class FlashCardExtensions
     {
-        private static readonly Random rng = new Random();
+        private static readonly Random Rng = new Random();
         public static List<Card> AddAltAnswers(this List<Card> cards)
         {
             var answers = cards.Select(x => x.Answer).ToArray();
@@ -19,7 +19,7 @@ namespace PracticeCSharpPWA.Shared.ExtensionMethods
                 for (int i = 0; i < 3; i++)
                 {
                     var altDisplayLoop = new AnswerData();
-                    altAnswer = rng.Next(0, answers.Length);
+                    altAnswer = Rng.Next(0, answers.Length);
                     altDisplayLoop.Answer = answers[altAnswer];
                     if (!card.DisplayAnswers.Contains(altDisplayLoop) && card.Answer != altDisplayLoop.Answer)
                     {
@@ -40,7 +40,7 @@ namespace PracticeCSharpPWA.Shared.ExtensionMethods
             while (n > 1)
             {
                 n--;
-                int k = rng.Next(n + 1);
+                int k = Rng.Next(n + 1);
                 T value = cards[k];
                 cards[k] = cards[n];
                 cards[n] = value;

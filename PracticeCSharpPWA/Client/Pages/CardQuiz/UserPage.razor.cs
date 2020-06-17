@@ -16,17 +16,6 @@ namespace PracticeCSharpPWA.Client.Pages.CardQuiz
         protected bool isSelectDeck;
         protected bool isReview;
 
-        protected async Task SelectDeck()
-        {
-            SelectedDeck = UserDecks.Find(x => x.Name == deckName);
-            await DeckState.UpdateSelectedDeck(SelectedDeck);
-            isHideList = true;
-            DeckCards = DeckState.SelectedDeck?.Cards;
-            quizTitle = $"Test your {SelectedDeck.Subject} Knowledge";
-            isSelectDeck = true;
-            StateHasChanged();
-        }
-
         protected async Task SelectDeck(string deckname)
         {
             SelectedDeck = await Http.GetFromJsonAsync<Deck>($"api/FlashCards/{deckname}");

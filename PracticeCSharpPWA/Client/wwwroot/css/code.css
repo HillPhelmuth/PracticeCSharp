@@ -21,7 +21,9 @@
 
 #output-outer {
     overflow: auto;
-    height: 40em;
+/*    height: 40em;*/
+    max-height:50em;
+    min-height: 20em;
     line-height: 3ex;
     display: flex;
     flex-direction: column-reverse
@@ -46,8 +48,8 @@
 }
 .codeOut {
     font-size: 1.7rem;
-    background-color: lightgray;
-    color: darkgreen;
+    background-color: black;
+    color: white;
     font-weight: 600;
     right: 0px;
     top: 55px;

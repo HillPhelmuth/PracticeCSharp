@@ -19,7 +19,8 @@ namespace PracticeCSharpPWA.Shared.Models.VideosModels
     {
         [JsonProperty("name")]
         public string Name { get; set; }
-
+        [JsonProperty("subHeader")]
+        public string SubHeader { get; set; }
         [JsonProperty("videos")]
         public List<Video> Videos { get; set; }
     }

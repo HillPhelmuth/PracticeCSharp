@@ -22,7 +22,7 @@
         public const string FORMAT = "string name = \"George Bluth\";\nint age = 33;\n" +
                                      "string authorInfo = string.Format(\"{0} is {1} years old.\", name, age.ToString());\nreturn authorInfo;";
         public const string INTERPOLATION = "string name = \"George Bluth\";\nint age = 33;\n" +
-                                            "string authorInfo = string.Format($\"{name} is {age} years old.\");\nreturn authorInfo";
+                                            "string authorInfo = string.Format($\"{name} is {age} years old.\");\nreturn authorInfo;";
         public const string SUBSTRING = "string authorInfo = \"Buster Bluth is 33 years old.\";\n" +
                                         "int startPosition = authorInfo.IndexOf(\"is \") + 1;\n" +
                                         "string age = authorInfo.Substring(startPosition +2, 2 );\nreturn age;";

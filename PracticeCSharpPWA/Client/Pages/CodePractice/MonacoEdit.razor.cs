@@ -17,7 +17,6 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         protected HttpClient Http { get; set; }
         [Inject]
         public CodeEditorService CodeEditorService { get; set; }
-        //protected HackerEarthResponse HackerEarthResponse { get; set; }
         protected bool IsCodeReady { get; set; }
         protected MonacoEditor Editor { get; set; }
         protected string ValueToSet { get; set; }
@@ -91,7 +90,6 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         protected void Reset()
         {
             ValueToSet = "";
-            //HackerEarthResponse = null;
             IsCodeReady = false;
             StateHasChanged();
         }

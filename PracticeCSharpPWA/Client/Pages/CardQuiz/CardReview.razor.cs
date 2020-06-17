@@ -73,8 +73,7 @@ namespace PracticeCSharpPWA.Client.Pages.CardQuiz
                 isCorrect = false;
             }
             await DeckState.UpdateStats(isCorrect);
-            var stats = DeckState.DeckStats;
-
+            
             StateHasChanged();
         }
         protected void CardAnimEnd() => enabled = false;

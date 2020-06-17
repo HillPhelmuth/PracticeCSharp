@@ -1,7 +1,8 @@
 {
   "videosList": [
     {
-      "name": "Intro to Strings",
+      "name": "Strings",
+      "subHeader": "Basics",
       "videos": [
         {
           "title": "The Basics of Strings",
@@ -26,7 +27,8 @@
       ]
     },
     {
-      "name": "Intermediate Strings",
+      "name": "Strings",
+      "subHeader": "Intermediate",
       "videos": [
         {
           "title": "C#.Net Tutorial 5 - Constants, Strings, and String Functions",
@@ -51,7 +53,8 @@
       ]
     },
     {
-      "name": "Advanced Strings",
+      "name": "Strings",
+      "subHeader": "Advanced",
       "videos": [
         {
           "title": "C# Tutorial - Encrypt and Decrypt a String",
@@ -76,7 +79,8 @@
       ]
     },
     {
-      "name": "Intro to Collections",
+      "name": "Collections",
+      "subHeader": "Basics",
       "videos": [
         {
           "title": "Introduction To Collections in C#",
@@ -96,7 +100,8 @@
       ]
     },
     {
-      "name": "Intermediate Collections",
+      "name": "Collections",
+      "subHeader": "Intermediate",
       "videos": [
         {
           "title": "Collections - Dictionary, SortedDictionary and Sorted List ",
@@ -116,7 +121,8 @@
       ]
     },
     {
-      "name": "Advanced Collections",
+      "name": "Collections",
+      "subHeader": "Advanced",
       "videos": [
         {
           "title": "Advanced - SortedList Generic Collection",
@@ -137,6 +143,7 @@
     },
     {
       "name": "Conditionals",
+      "subHeader": "Basics",
       "videos": [
         {
           "title": "Conditional Statements In C# | If, Else if, Else",
@@ -157,6 +164,7 @@
     },
     {
       "name": "Loops",
+      "subHeader": "Basics",
       "videos": [
         {
           "title": "Do while loop in c#",
@@ -186,7 +194,8 @@
       ]
     },
     {
-      "name": "Intro to Classes and Objects",
+      "name": "Classes and Objects",
+      "subHeader": "Basics",
       "videos": [
         {
           "title": "Introduction to Classes and Objects in C#",
@@ -206,7 +215,8 @@
       ]
     },
     {
-      "name": "Intermediate Classes",
+      "name": "Classes",
+      "subHeader": "Intermediate",
       "videos": [
         {
           "title": "Different kinds of Variables in a class",
@@ -226,7 +236,8 @@
       ]
     },
     {
-      "name": "Advanced Classes Tutorials",
+      "name": "Classes",
+      "subHeader": "Advanced Tutorials",
       "videos": [
         {
           "title": "C# Object-Oriented Design - Restaurant Class Example",
