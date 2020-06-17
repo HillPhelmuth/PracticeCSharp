@@ -184,6 +184,66 @@
           "preferenceId": 4
         }
       ]
+    },
+    {
+      "name": "Intro to Classes and Objects",
+      "videos": [
+        {
+          "title": "Introduction to Classes and Objects in C#",
+          "videoId": "wuxVSdBzDJg",
+          "preferenceId": 0
+        },
+        {
+          "title": "C# Classes and Objects - Beginners",
+          "videoId": "F1UbHiyqlD4",
+          "preferenceId": 1
+        },
+        {
+          "title": "Intro to C# classes and Objects",
+          "videoId": "getvS3Yu9G4",
+          "preferenceId": 3
+        }
+      ]
+    },
+    {
+      "name": "Intermediate Classes",
+      "videos": [
+        {
+          "title": "Different kinds of Variables in a class",
+          "videoId": "pVTEwRmjV50",
+          "preferenceId": 0
+        },
+        {
+          "title": "Difference between classes and structs in c#",
+          "videoId": "AGNW0jH1sn0",
+          "preferenceId": 1
+        },
+        {
+          "title": "C# - Creating Basic Classes, Methods, and Properties",
+          "videoId": "L-NIkOMlocg",
+          "preferenceId": 3
+        }
+      ]
+    },
+    {
+      "name": "Advanced Classes Tutorials",
+      "videos": [
+        {
+          "title": "C# Object-Oriented Design - Restaurant Class Example",
+          "videoId": "RR4Strzb8Q0",
+          "preferenceId": 0
+        },
+        {
+          "title": "Advanced C# Tutorial - How to Create Class and Object",
+          "videoId": "E8zzHG4hesI",
+          "preferenceId": 1
+        },
+        {
+          "title": "C# Exercise: Vending Machine (OOP, Objects, Classes, Methods)",
+          "videoId": "33czhZrH51s",
+          "preferenceId": 3
+        }
+      ]
     }
   ] 
 }
