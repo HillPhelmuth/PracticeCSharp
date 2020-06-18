@@ -9,44 +9,48 @@
                 <MatAccordion Multi="true">
                     @foreach (var videos in Videos.VideosList)
                     {
-                        <MatExpansionPanel>
-                            <MatExpansionPanelSummary>
-                                <MatExpansionPanelHeader Style="font-weight:600">@videos.Name</MatExpansionPanelHeader>
-                                <MatExpansionPanelSubHeader>@videos.SubHeader</MatExpansionPanelSubHeader>
-                            </MatExpansionPanelSummary>
-                            <MatExpansionPanelDetails Class="text-center">
-                                @*<div class="text-center">*@
+                        <div @onmouseover="@(e => videos.IsVisible = true)" @onmouseout="@(e => videos.IsVisible = false)">
+                            <MatExpansionPanel Expanded="videos.IsVisible">
+                                <MatExpansionPanelSummary>
+                                    <MatExpansionPanelHeader Style="font-weight:600">@videos.Name</MatExpansionPanelHeader>
+                                    <MatExpansionPanelSubHeader>
+                                        @videos.SubHeader
+
+                                    </MatExpansionPanelSubHeader>
+                                </MatExpansionPanelSummary>
+                                <MatExpansionPanelDetails Class="text-center">
+                                    @*<div class="text-center">*@
                                     <MatH4>@videos.Name</MatH4>
                                     @foreach (var video in videos.Videos)
                                     {
                                         <MatButton @onmousedown="@(() => selectedVideoId = video.VideoId)" @onmouseup="PlayVideos">@video.Title</MatButton>
                                         <br />
                                     }
-                                @*</div>*@
-                            </MatExpansionPanelDetails>
-                        </MatExpansionPanel>
+                                    @*</div>*@
+                                </MatExpansionPanelDetails>
+                            </MatExpansionPanel>
+
+                        </div>
                     }
                 </MatAccordion>
             }
         </div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-span-7">
-            <div style="margin: auto">
-               
+            <div style="margin: auto" class="text-center">
 
                 @if (IsVideoReady)
                 {
-                    <MatButton Raised="true" Style="margin-left: auto; margin-right: auto; margin-top:-46px" @onclick="@(() => HandleVideoEnd(true))">Close</MatButton>
+                    <MatButton Raised="true" Style="margin-left: auto; margin-right: auto; margin-top: -46px" @onclick="@(() => HandleVideoEnd(true))">Close</MatButton>
                     <VideoPlayer VideoId="@selectedVideoId" VideoEnded="HandleVideoEnd" />
                 }
                 else
                 {
-                    <Animation Effect="Effect.Pulse" IterationCount="10000000" Speed="Speed.Slow" Delay="Delay.OneSecond">
-                        <div style="margin-left: auto; margin-right: auto; margin-top: 3em; background-color: darkblue; color: white; width: 450px; height: 225px; font-size: 3em; padding-top:1.5em" class="text-center">
-                            Select a video
-                        </div>
-                    </Animation>
+                    <div style="margin-left: auto; margin-right: auto; margin-top: 3em; background-color: darkblue; color: white; width: 450px; height: 225px; font-size: 3em; padding-top: 1.5em" class="text-center">
+                        Select a video
+                    </div>
                 }
             </div>
+
         </div>
     </div>
 </div>

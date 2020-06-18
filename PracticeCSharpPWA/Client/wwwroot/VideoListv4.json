@@ -255,6 +255,32 @@
           "preferenceId": 3
         }
       ]
+    },
+    {
+      "name": "Blazor",
+      "subHeader": "Blazor Videos",
+      "videos": [
+        {
+          "title": "Blazor server-side vs client-side (WebAssembly)",
+          "videoId": "HFvPKmS2gig",
+          "preferenceId": 0
+        },
+        {
+          "title": "Building Full-stack C# Web Apps with Blazor in .NET Core",
+          "videoId": "MetcuX1OHD0",
+          "preferenceId": 1
+        },
+        {
+          "title": "How to add Authentication in Server-side Blazor",
+          "videoId": "ntmV9nj4N2Y",
+          "preferenceId": 1
+        },
+        {
+          "title": "Blazor Server Components - Making Razor Components Easy to Use",
+          "videoId": "JE0tQ4tx0Nc",
+          "preferenceId": 2
+        }
+      ]
     }
   ] 
 }

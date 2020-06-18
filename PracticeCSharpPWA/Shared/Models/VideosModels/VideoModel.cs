@@ -23,6 +23,8 @@ namespace PracticeCSharpPWA.Shared.Models.VideosModels
         public string SubHeader { get; set; }
         [JsonProperty("videos")]
         public List<Video> Videos { get; set; }
+        [JsonIgnore]
+        public bool IsVisible { get; set; }
     }
 
     public class Video
