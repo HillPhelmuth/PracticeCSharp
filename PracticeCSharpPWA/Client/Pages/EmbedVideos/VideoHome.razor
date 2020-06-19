@@ -19,17 +19,14 @@
                                     </MatExpansionPanelSubHeader>
                                 </MatExpansionPanelSummary>
                                 <MatExpansionPanelDetails Class="text-center">
-                                    @*<div class="text-center">*@
                                     <MatH4>@videos.Name</MatH4>
                                     @foreach (var video in videos.Videos)
                                     {
                                         <MatButton @onmousedown="@(() => selectedVideoId = video.VideoId)" @onmouseup="PlayVideos">@video.Title</MatButton>
                                         <br />
                                     }
-                                    @*</div>*@
                                 </MatExpansionPanelDetails>
                             </MatExpansionPanel>
-
                         </div>
                     }
                 </MatAccordion>
@@ -45,7 +42,7 @@
                 }
                 else
                 {
-                    <div style="margin-left: auto; margin-right: auto; margin-top: 3em; background-color: darkblue; color: white; width: 450px; height: 225px; font-size: 3em; padding-top: 1.5em" class="text-center">
+                    <div style="background-color: darkblue;" class="text-center placeholder">
                         Select a video
                     </div>
                 }

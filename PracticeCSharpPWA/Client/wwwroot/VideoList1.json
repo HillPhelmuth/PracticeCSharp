@@ -281,6 +281,58 @@
           "preferenceId": 2
         }
       ]
+    },
+    {
+      "name": "Asp.net core",
+      "subHeader": "MVC and Razor pages",
+      "videos": [
+        {
+          "title": "Learn ASP.NET Core 3.1 - Full Course for Beginners",
+          "videoId": "C5cnZ-gZy2I",
+          "preferenceId": 0
+        },
+        {
+          "title": "Introduction to ASP.NET MVC in C#: Basics, Advanced Topics...",
+          "videoId": "phyV-OQNeRM",
+          "preferenceId": 1
+        },
+        {
+          "title": "Building an ASP.NET Core App from Start to Finish",
+          "videoId": "l2wE6KQuYRc",
+          "preferenceId": 2
+        },
+        {
+          "title": "Intro to ASP.NET Core Razor Pages - From Start to Published",
+          "videoId": "68towqYcQlY",
+          "preferenceId": 3
+        }
+      ]
+    },
+    {
+      "name": "C# Careers",
+      "subHeader": "Advance your career with C#",
+      "videos": [
+        {
+          "title": "Top 50 C# Interview Questions and Answers",
+          "videoId": "ipYKV3U8SyM",
+          "preferenceId": 0
+        },
+        {
+          "title": "How Do I Get a C# Developer Job? How Do I Prepare? Do I Need a Portfolio?",
+          "videoId": "JnTw3VBz3rg",
+          "preferenceId": 1
+        },
+        {
+          "title": "The MANY things you can build with C#",
+          "videoId": "S3tTkd3_dzQ",
+          "preferenceId": 2
+        },
+        {
+          "title": "How to become a .net developer?",
+          "videoId": "cPTLI5gsYyc",
+          "preferenceId": 3
+        }
+      ]
     }
   ] 
 }

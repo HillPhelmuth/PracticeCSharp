@@ -16,17 +16,15 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
         [Inject]
         protected NavigationManager NavigationManager { get; set; }
         public Videos Videos { get; set; }
-        protected VideosList BlazorVideos { get; set; }
         protected string selectedVideoId { get; set; }
         protected bool IsVideoReady;
         protected bool IsPageVideosReady;
         protected override async Task OnInitializedAsync()
         {
             var client = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
-            var videosString = await client.GetStringAsync("VideoListv4.json");
-            Console.WriteLine($"videos string: {videosString}");
+            var videosString = await client.GetStringAsync("VideoList1.json");
+            //Console.WriteLine($"videos string: {videosString}");
             Videos = JsonConvert.DeserializeObject<Videos>(videosString);
-            BlazorVideos = Videos.VideosList.Find(x => x.Name.Contains("Blazor"));
             IsPageVideosReady = true;
         }
         protected void HandleVideoEnd(bool isEnd)

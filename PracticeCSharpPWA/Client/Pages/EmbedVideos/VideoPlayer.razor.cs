@@ -21,16 +21,19 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
         
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            var refThis = DotNetObjectReference.Create(this);
-            await JSRuntime.StartYouTube();
-            await Task.Delay(1000);
-            await JSRuntime.InvokeAsync<object>("getYouTube", refThis, VideoId);
+            if (firstRender)
+            {
+                var refThis = DotNetObjectReference.Create(this);
+                await JSRuntime.StartYouTube();
+                await Task.Delay(500);
+                await JSRuntime.InvokeAsync<object>("getYouTube", refThis, VideoId);
+            }
         }
         [JSInvokable]
         // ReSharper disable once UnusedMember.Global -JSInvokable used by javascript code
         public async Task GetNextVideo()
         {
-            await Task.Delay(1000);
+            await Task.Delay(500);
             await JSRuntime.StopYouTubePlayer();
             await VideoEnded.InvokeAsync(false);
         }
