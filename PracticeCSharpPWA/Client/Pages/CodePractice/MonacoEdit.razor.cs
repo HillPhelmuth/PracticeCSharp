@@ -50,7 +50,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         {
             CodeSnippet = CodeEditorService.CodeSnippet;
             await Editor.SetValue(CodeSnippet);
-            Console.WriteLine($"Event Fired - Editor updated to {await Editor.GetValue()}");
+            //Console.WriteLine($"Event Fired - Editor updated to {await Editor.GetValue()}");
             StateHasChanged();
             //return Task.CompletedTask;
         }

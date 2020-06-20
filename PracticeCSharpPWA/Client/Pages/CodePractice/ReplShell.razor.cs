@@ -13,20 +13,23 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Scripting.Hosting;
 using PracticeCSharpPWA.Client.Shared;
+using PracticeCSharpPWA.Shared;
 using PracticeCSharpPWA.Shared.Models.CodeEditorModels;
 
 namespace PracticeCSharpPWA.Client.Pages.CodePractice
 {
-    public partial class ReplShell : ComponentBase
+    public partial class ReplShell : ComponentBase, IDisposable
     {
         [Inject]
         protected NavigationManager NavigationManager { get; set; }
         [Inject]
         public CodeEditorService CodeEditorService { get;  set; }
+        [Inject]
+        protected AppStateService AppStateService { get; set; }
         public string InfoOutput { get; set; } = "";
         public string Input { get; set; } = "";
         protected CSharpCompilation runningCompilation;
-        protected IEnumerable<MetadataReference> references;
+        protected IEnumerable<MetadataReference> References;
         protected object[] submissionStates = { null, null };
         protected int submissionIndex = 0;
         protected List<string> history = new List<string>();
@@ -38,17 +41,19 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         protected override async Task OnInitializedAsync()
         {
             var refs = AppDomain.CurrentDomain.GetAssemblies();
-            var client = new HttpClient {BaseAddress = new Uri(NavigationManager.BaseUri)};
+            var Http = new HttpClient {BaseAddress = new Uri(NavigationManager.BaseUri)};
 
             var assemblyRefs = new List<MetadataReference>();
 
-            foreach (var reference in refs.Where(x => !x.IsDynamic && !string.IsNullOrWhiteSpace(x.Location)))
+            foreach (var reference in refs.Where(x => !x.IsDynamic && !string.IsNullOrWhiteSpace(x.Location) && (x.FullName.Contains("System") || x.FullName.Contains("mscorlib") || x.FullName.Contains("netstandard"))))
             {
-                var stream = await client.GetStreamAsync($"_framework/_bin/{reference.Location}");
+                var stream = await Http.GetStreamAsync($"_framework/_bin/{reference.Location}");
                 assemblyRefs.Add(MetadataReference.CreateFromStream(stream));
             }
-            references = assemblyRefs;
+            References = AppStateService.References;
+            AppStateService.OnChange += StateHasChanged;
             CodeEditorService.Evaluate += SubmitMonaco;
+
         }
         protected void OnKeyDown(KeyboardEventArgs e)
         {
@@ -156,7 +161,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             var scriptCompilation = CSharpCompilation.CreateScriptCompilation(
                 Path.GetRandomFileName(),
                 CSharpSyntaxTree.ParseText(source, CSharpParseOptions.Default.WithKind(SourceCodeKind.Script).WithLanguageVersion(LanguageVersion.Preview)),
-                references,
+                References,
                 new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, usings: new[]
                 {
                     "System",
@@ -190,6 +195,12 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
             assembly = Assembly.Load(peStream.ToArray());
             return true;
 
+        }
+
+        public void Dispose()
+        {
+            AppStateService.OnChange -= StateHasChanged;
+            CodeEditorService.Evaluate -= SubmitMonaco;
         }
     }
 }

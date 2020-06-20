@@ -31,7 +31,7 @@
 
         </MatTab>
         <MatTab Label="Code Challenges">
-            <CodeChallengeHome />
+            <CodeChallengeHome OnNotReady="HandleNotReady" />
         </MatTab>
         <MatTab Label="Practice C#(Shell and Monaco)">
             <CodeHome />
@@ -41,9 +41,3 @@
         </MatTab>
     </MatTabGroup>
 </MatAccordion>
-
-@code {
-
-    int tabIndex = 0;
-
-}

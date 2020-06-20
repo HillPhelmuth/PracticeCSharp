@@ -29,7 +29,7 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
         {
             CodeSnippet = codeSnippet;
             NotifyNewSnippet();
-            Console.WriteLine($"Event Fired - Snippet updated to {codeSnippet}");
+            //Console.WriteLine($"Event Fired - Snippet updated to {codeSnippet}");
         }
 
         public void EvaluateCode(string code)

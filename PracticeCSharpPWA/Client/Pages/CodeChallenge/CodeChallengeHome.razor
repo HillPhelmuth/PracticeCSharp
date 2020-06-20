@@ -3,13 +3,18 @@
 {
     <MatButton OnClick="ChangePuzzle" Label="New Puzzle"></MatButton>
 }
-@if (isPuzzleSucceed)
+@if (isChallengeSucceed)
 {
     <MatH3>Success!</MatH3>
 }
-@if (isPuzzleFail)
+@if (isChallengeFail)
 {
     <MatH3 Style="color:red">Fail!</MatH3>
+}
+@if (!isChallengeReady)
+{
+    <SpinKitRotatingPlane />
+
 }
 @if (!takeChallenge && isChallengeReady)
 {
@@ -21,17 +26,20 @@
     }
 
 }
-@*@if (selectedChallenge != null)
-{
-    <MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
-}*@
+
 
 
 @if (takeChallenge)
 {
-
+    
     <MatButton Icon="input" OnClick="HandleCodeSubmit" Raised="true">Submit Solution</MatButton>
     <MatButton Style="font-size:.7em" @onclick="ShowAnswer">Give Up? Get a solution</MatButton>
+    @if (isCodeCompiling)
+    {
+        <hr />
+        <p>Executing...</p>
+        <SpinKitChasingDots/>
+    }
     <hr />
     <BlazorMonaco.MonacoEditor CssClass="editor" @ref="Editor" Id="puzzleCsharp"
                                ConstructionOptions="EditorOptionsPuzzle"

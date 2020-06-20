@@ -2,34 +2,34 @@
 <div class="mat-layout-grid" style="max-width: 800px;">
     <div class="mat-layout-grid-inner text-center">
         <div class="mat-layout-grid-cell">
-            <MatH4>Easy</MatH4>
+            <MatH5>Easy</MatH5>
             <MatList SingleSelection="true">
                 @foreach (var easy in CodeChallenges.Challenges.Where(x => x.Difficulty == "Easy"))
                 {
                     <MatListDivider></MatListDivider>
-                    <MatListItem><MatButton @onclick="@(() => SelectPuzzle(easy))">@easy.Name</MatButton></MatListItem>
+                    <MatListItem><MatButton @onclick="@(() => SelectChallenge(easy))">@easy.Name</MatButton></MatListItem>
                     
                 }
             </MatList>
         </div>
         <div class="mat-layout-grid-cell">
-            <MatH4>Medium</MatH4>
+            <MatH5>Medium</MatH5>
             <MatList SingleSelection="true">
                 @foreach (var medium in CodeChallenges.Challenges.Where(x => x.Difficulty == "Mid"))
                 {
                     <MatListDivider></MatListDivider>
-                    <MatListItem><MatButton @onclick="@(() => SelectPuzzle(medium))">@medium.Name</MatButton></MatListItem>
+                    <MatListItem><MatButton @onclick="@(() => SelectChallenge(medium))">@medium.Name</MatButton></MatListItem>
                    
                 }
             </MatList>
         </div>
         <div class="mat-layout-grid-cell">
-            <MatH4>Hard</MatH4>
+            <MatH5>Hard</MatH5>
             <MatList SingleSelection="true">
                 @foreach (var hard in CodeChallenges.Challenges.Where(x => x.Difficulty == "Hard"))
                 {
                     <MatListDivider></MatListDivider>
-                    <MatListItem> <MatButton @onclick="@(() => SelectPuzzle(hard))">@hard.Name</MatButton></MatListItem>
+                    <MatListItem> <MatButton @onclick="@(() => SelectChallenge(hard))">@hard.Name</MatButton></MatListItem>
                    
                 }
             </MatList>
@@ -37,7 +37,7 @@
     </div>
 </div>
 
-@if (isPuzzleSelected)
+@if (isChallengeSelected)
 {
     @((MarkupString) description)
     <br />

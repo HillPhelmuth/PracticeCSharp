@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Scripting.Hosting;
+using PracticeCSharpPWA.Shared.Models.VideosModels;
 
 namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
 {
@@ -21,12 +22,9 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
         protected IEnumerable<MetadataReference> _references;
         protected object[] submissionStates = { null, null };
         protected int submissionIndex = 0;
-        
         public EventCallback<string> CodeOutputChanged { get; set; }
-
-
         public string CodeOutput { get; set; }
-
+        
         public async Task<bool> SubmitPuzzle(string code, IEnumerable<MetadataReference> references, string testAgainst = "true")
         {
             await RunSubmission(code, references);

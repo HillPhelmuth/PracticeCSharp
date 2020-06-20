@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PracticeCSharpPWA.Shared;
 using PracticeCSharpPWA.Shared.Models.CodeEditorModels;
 using PracticeCSharpPWA.Shared.Models.FlashCardModels;
 
@@ -23,6 +24,7 @@ namespace PracticeCSharpPWA.Client
             builder.Services.AddSingleton<DeckStateService>();
             builder.Services.AddSingleton<CodeEditorService>();
             builder.Services.AddSingleton<CompilerService>();
+            builder.Services.AddSingleton<AppStateService>();
             await builder.Build().RunAsync();
         }
     }

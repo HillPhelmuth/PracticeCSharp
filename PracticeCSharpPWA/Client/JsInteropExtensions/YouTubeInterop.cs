@@ -13,7 +13,7 @@ namespace PracticeCSharpPWA.Client.JsInteropExtensions
         {
             return jsRuntime.InvokeAsync<object>("addPlayer");
         }
-        public static ValueTask<object> StopYouTubePlayer(this IJSRuntime jsRuntime)
+        public static ValueTask<object> RemoveYouTubePlayer(this IJSRuntime jsRuntime)
         {
             return jsRuntime.InvokeAsync<object>("removeYouTube");
         }

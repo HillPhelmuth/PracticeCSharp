@@ -9,35 +9,23 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
 {
     public partial class ChallengeSelect
     {
-        public Puzzle selectedPuzzle { get; set; }
-        private readonly Puzzle[] puzzles = Enum.GetValues(typeof(Puzzle)).Cast<Puzzle>().ToArray();
         private string description;
         private string examples;
-        private bool isPuzzleSelected;
+        private bool isChallengeSelected;
         public Challenge selectedChallenge { get; set; }
         [Parameter]
         public CodeChallenges CodeChallenges { get; set; }
-        [Parameter] 
+        [Parameter]
         public EventCallback<string> OnPuzzleChanged { get; set; }
 
-        //protected async Task SelectPuzzle()
-        //{
-        //    await Task.Delay(200);
-        //    description = selectedChallenge.Description;
-        //    examples = selectedChallenge.Examples;
-        //    isPuzzleSelected = true;
-        //    await OnPuzzleChanged.InvokeAsync(selectedChallenge);
-        //    Console.WriteLine($"Puzzle selected: {selectedChallenge.Name}");
-        //    StateHasChanged();
-            
-        //}
-        protected Task SelectPuzzle(Challenge challenge)
+
+        protected Task SelectChallenge(Challenge challenge)
         {
             selectedChallenge = challenge;
             var challengeName = challenge.Name;
             description = selectedChallenge.Description;
             examples = selectedChallenge.Examples;
-            isPuzzleSelected = true;
+            isChallengeSelected = true;
             OnPuzzleChanged.InvokeAsync(challengeName);
             Console.WriteLine($"Puzzle selected: {selectedChallenge.Name}");
             StateHasChanged();

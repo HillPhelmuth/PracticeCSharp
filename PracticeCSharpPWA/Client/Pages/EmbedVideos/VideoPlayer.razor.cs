@@ -34,9 +34,9 @@ namespace PracticeCSharpPWA.Client.Pages.EmbedVideos
         public async Task GetNextVideo()
         {
             await Task.Delay(500);
-            await JSRuntime.StopYouTubePlayer();
+            await JSRuntime.RemoveYouTubePlayer();
             await VideoEnded.InvokeAsync(false);
         }
-        public void Dispose() => JSRuntime.StopYouTubePlayer();
+        public void Dispose() => JSRuntime.RemoveYouTubePlayer();
     }
 }
