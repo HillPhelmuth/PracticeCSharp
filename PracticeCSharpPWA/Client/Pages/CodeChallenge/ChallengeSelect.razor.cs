@@ -14,29 +14,35 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
         private string description;
         private string examples;
         private bool isPuzzleSelected;
+        public Challenge selectedChallenge { get; set; }
+        [Parameter]
+        public CodeChallenges CodeChallenges { get; set; }
         [Parameter] 
-        public EventCallback<Puzzle> OnPuzzleChanged { get; set; }
-        protected Task SelectPuzzle()
+        public EventCallback<string> OnPuzzleChanged { get; set; }
+
+        //protected async Task SelectPuzzle()
+        //{
+        //    await Task.Delay(200);
+        //    description = selectedChallenge.Description;
+        //    examples = selectedChallenge.Examples;
+        //    isPuzzleSelected = true;
+        //    await OnPuzzleChanged.InvokeAsync(selectedChallenge);
+        //    Console.WriteLine($"Puzzle selected: {selectedChallenge.Name}");
+        //    StateHasChanged();
+            
+        //}
+        protected Task SelectPuzzle(Challenge challenge)
         {
-            switch (selectedPuzzle)
-            {
-                case Puzzle.Braces:
-                    description = ChallengeInfo.BracesDescription;
-                    examples = ChallengeInfo.BracesExamples;
-                    break;
-                case Puzzle.Prime:
-                    description = ChallengeInfo.PrimeDescription;
-                    examples = ChallengeInfo.PrimeExamples;
-                    break;
-                case Puzzle.Rot13:
-                    description = ChallengeInfo.Rot13Description;
-                    examples = ChallengeInfo.Rot13Examples;
-                    break;
-            }
+            selectedChallenge = challenge;
+            var challengeName = challenge.Name;
+            description = selectedChallenge.Description;
+            examples = selectedChallenge.Examples;
             isPuzzleSelected = true;
-            OnPuzzleChanged.InvokeAsync(selectedPuzzle);
+            OnPuzzleChanged.InvokeAsync(challengeName);
+            Console.WriteLine($"Puzzle selected: {selectedChallenge.Name}");
             StateHasChanged();
             return Task.CompletedTask;
+
         }
     }
 }

@@ -13,6 +13,7 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
             "<div>is_prime(1)  => false<br/>is_prime(2)  => true<br/>is_prime(-1) => false<br/></div>";
 
         public const string Rot13Description = "<p>ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet.ROT13 is an example of the Caesar cipher.<br/>Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, they should be returned as they are. Only letters from the latin/english alphabet should be shifted, like in the original Rot13 \"implementation\".</p>";
-        public const string Rot13Examples = "<div>No Examples</div>";
+        public const string Rot13Examples = "<div>Rot13(Grfg) => \"Test\"</div>";
     }
+
 }

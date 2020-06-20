@@ -1,11 +1,46 @@
 ﻿
-<MatSelectItem @bind-Value="selectedPuzzle" Items="puzzles"></MatSelectItem>
-<p>Selected: @selectedPuzzle</p>
-<MatButton Raised="true" Label="Select challenge" OnClick="SelectPuzzle"></MatButton>
+<div class="mat-layout-grid" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner text-center">
+        <div class="mat-layout-grid-cell">
+            <MatH4>Easy</MatH4>
+            <MatList SingleSelection="true">
+                @foreach (var easy in CodeChallenges.Challenges.Where(x => x.Difficulty == "Easy"))
+                {
+                    <MatListDivider></MatListDivider>
+                    <MatListItem><MatButton @onclick="@(() => SelectPuzzle(easy))">@easy.Name</MatButton></MatListItem>
+                    
+                }
+            </MatList>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <MatH4>Medium</MatH4>
+            <MatList SingleSelection="true">
+                @foreach (var medium in CodeChallenges.Challenges.Where(x => x.Difficulty == "Mid"))
+                {
+                    <MatListDivider></MatListDivider>
+                    <MatListItem><MatButton @onclick="@(() => SelectPuzzle(medium))">@medium.Name</MatButton></MatListItem>
+                   
+                }
+            </MatList>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <MatH4>Hard</MatH4>
+            <MatList SingleSelection="true">
+                @foreach (var hard in CodeChallenges.Challenges.Where(x => x.Difficulty == "Hard"))
+                {
+                    <MatListDivider></MatListDivider>
+                    <MatListItem> <MatButton @onclick="@(() => SelectPuzzle(hard))">@hard.Name</MatButton></MatListItem>
+                   
+                }
+            </MatList>
+        </div>
+    </div>
+</div>
+
 @if (isPuzzleSelected)
 {
     @((MarkupString) description)
-    <br/>
+    <br />
     <p>
         <MatH5>Examples</MatH5>
     </p>

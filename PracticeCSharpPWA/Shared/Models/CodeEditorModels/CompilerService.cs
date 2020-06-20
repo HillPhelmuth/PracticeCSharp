@@ -144,6 +144,8 @@ namespace PracticeCSharpPWA.Shared.Models.CodeEditorModels
     {
         Braces,
         Prime,
-        Rot13
+        Rot13,
+        MultipleOf3or5,
+        AbbreviateName
     }
 }

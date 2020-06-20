@@ -11,17 +11,31 @@
 {
     <MatH3 Style="color:red">Fail!</MatH3>
 }
-@if (!takeChallenge)
+@if (!takeChallenge && isChallengeReady)
 {
-    <ChallengeSelect OnPuzzleChanged="HandlePuzzleChanged" />
+    <ChallengeSelect CodeChallenges="CodeChallenges" OnPuzzleChanged="HandlePuzzleChanged" />
+    <br />
+    @if (selectedChallenge != null)
+    {
+        <MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
+    }
+
 }
-<MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
+@*@if (selectedChallenge != null)
+{
+    <MatButton Raised="true" Label="Solve" OnClick="SolveChallenge"></MatButton>
+}*@
+
+
 @if (takeChallenge)
 {
+
     <MatButton Icon="input" OnClick="HandleCodeSubmit" Raised="true">Submit Solution</MatButton>
-    <hr/>
+    <MatButton Style="font-size:.7em" @onclick="ShowAnswer">Give Up? Get a solution</MatButton>
+    <hr />
     <BlazorMonaco.MonacoEditor CssClass="editor" @ref="Editor" Id="puzzleCsharp"
                                ConstructionOptions="EditorOptionsPuzzle"
-                               OnDidInit="EditorOnDidInit" OnContextMenu="OnContextMenu"/>
+                               OnDidInit="EditorOnDidInit" OnContextMenu="OnContextMenu" />
+
 }
 

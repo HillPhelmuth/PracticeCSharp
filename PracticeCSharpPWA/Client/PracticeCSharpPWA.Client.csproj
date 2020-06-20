@@ -33,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\ChallengeData1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\VideoList1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

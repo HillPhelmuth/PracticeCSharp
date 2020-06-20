@@ -1,14 +1,12 @@
 ﻿@page "/"
-@inject CodeEditorService CodeEditorService
 
-@using PracticeCSharpPWA.Shared.Models.CodeEditorModels
 
 <MatAccordion>
-    <MatTabGroup>
+    <MatTabGroup @bind-ActiveIndex="tabIndex">
         <MatTab Label="Home">
             <MatH4>Check out some C# learning tools, including:</MatH4>
             <MatList SingleSelection="true" TwoLine="true">
-                <MatListItem>
+                <MatListItem OnClick="@(() => tabIndex = 1)">
                     <MatListItemText>
                         <MatListItemPrimaryText>Code Challenges</MatListItemPrimaryText>
                         <MatListItemSecondaryText>Practice c# by taking some basic coding challenges
@@ -16,14 +14,14 @@
                     </MatListItemText>
                 </MatListItem>
                 <MatListDivider></MatListDivider>
-                <MatListItem>
+                <MatListItem OnClick="@(() => tabIndex = 2)">
                     <MatListItemText>
                         <MatListItemPrimaryText>Practice c#</MatListItemPrimaryText>
-                        <MatListItemSecondaryText>Use a c# REPL to compile c# line-by-line or use a Monaco Editor with a variety of starting code snippets</MatListItemSecondaryText>
+                        <MatListItemSecondaryText>Use a c# interactive shell to compile c# line-by-line or use a Monaco Editor with a variety of starting code snippets</MatListItemSecondaryText>
                     </MatListItemText>
                 </MatListItem>
                 <MatListDivider></MatListDivider>
-                <MatListItem>
+                <MatListItem OnClick="@(() => tabIndex = 3)">
                     <MatListItemText>
                         <MatListItemPrimaryText>Watch C# Videos</MatListItemPrimaryText>
                         <MatListItemSecondaryText>Select from a variety of Topics to watch YouTube training videos</MatListItemSecondaryText>
@@ -35,7 +33,7 @@
         <MatTab Label="Code Challenges">
             <CodeChallengeHome />
         </MatTab>
-        <MatTab Label="Practice C#(Repl and Monaco)">
+        <MatTab Label="Practice C#(Shell and Monaco)">
             <CodeHome />
         </MatTab>
         <MatTab Label="Watch C# Videos">
@@ -43,39 +41,9 @@
         </MatTab>
     </MatTabGroup>
 </MatAccordion>
-@code
-{
-    protected bool isAnimate = true;
-    protected string CodeOutput;
-    protected string codeSnippet;
-    bool takeChallenge = false;
 
-    void SolveChallenge()
-    {
-        takeChallenge = !takeChallenge;
-    }
-    protected override Task OnInitializedAsync()
-    {
-        CodeEditorService.OnChange += StateHasChanged;
-        return base.OnInitializedAsync();
-    }
-    protected void HandleOutputChange(string output)
-    {
-        CodeOutput = output;
-        isAnimate = true;
-        StateHasChanged();
-    }
+@code {
 
-    protected Task UpdateCodeSnippet()
-    {
-        codeSnippet = CodeSnippets.BRACESPUZZLE;
-        CodeEditorService.UpdateSnippet(codeSnippet);
-        StateHasChanged();
+    int tabIndex = 0;
 
-        return Task.CompletedTask;
-    }
-
-    protected void ToggleAnimation() => isAnimate = false;
-
-    //public void Dispose() => CodeEditorService.OnChange -= StateHasChanged;
 }
