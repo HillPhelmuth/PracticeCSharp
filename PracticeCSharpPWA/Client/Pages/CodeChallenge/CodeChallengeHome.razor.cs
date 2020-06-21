@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using BlazorMonaco;
 using BlazorMonaco.Bridge;
@@ -21,6 +20,7 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
         public CompilerService CompilerService { get; set; }
         [Inject]
         public AppStateService AppStateService { get; set; }
+        
         public CodeChallenges CodeChallenges { get; set; }
         public Challenge selectedChallenge { get; set; }
        
@@ -51,10 +51,18 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
 
         private void SolveChallenge() => takeChallenge = !takeChallenge;
 
-        public async Task HandleCodeSubmit()
+        public async Task SubmitCode()
         {
             isCodeCompiling = true;
             StateHasChanged();
+            await Task.Run(() =>
+            {
+                _ = HandleCodeSubmit();
+            });
+            //await HandleCodeSubmit();
+        }
+        public async Task HandleCodeSubmit()
+        {
             var code = await Editor.GetValue();
             switch (selectedChallenge.Name)
             {
@@ -122,7 +130,6 @@ namespace PracticeCSharpPWA.Client.Pages.CodeChallenge
             isCodeCompiling = false;
             StateHasChanged();
         }
-
         protected Task HandlePuzzleChanged(string challengeName)
         {
             Console.WriteLine($"Challenge from handler: {challengeName}");

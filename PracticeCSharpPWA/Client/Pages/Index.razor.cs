@@ -19,7 +19,7 @@ namespace PracticeCSharpPWA.Client.Pages
         [Inject]
         protected HttpClient Http { get; set; }
         private int tabIndex = 0;
-
+        private bool isPageReady;
         protected override async Task OnInitializedAsync()
         {
             var challengeString = await Http.GetStringAsync("api/appData/code");
@@ -37,6 +37,7 @@ namespace PracticeCSharpPWA.Client.Pages
             var references = assemblyRefs;
 
             AppStateService.SetInitialAppState(codeChallenges, videos, references);
+            isPageReady = true;
         }
 
         protected Task HandleNotReady(int tab)
