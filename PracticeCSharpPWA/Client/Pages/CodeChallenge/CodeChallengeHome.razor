@@ -5,7 +5,9 @@
 }
 @if (isChallengeSucceed)
 {
-    <MatH3 Style="color:blue">Success!</MatH3>
+    <Animation Effect="@Effect.Flash" Speed="@Speed.Slow" IterationCount="500">
+        <MatH3 Style="color:blue">Success!</MatH3>
+    </Animation>
 }
 @if (isChallengeFail)
 {
@@ -29,7 +31,7 @@
 @if (isCodeCompiling)
 {
     <hr />
-    <MatH5 Class="text-center" Style="color:blue">Executing</MatH5>
+    <MatH4 Class="text-center" Style="color:blue">Executing...</MatH4>
 }
 
 @if (takeChallenge)
