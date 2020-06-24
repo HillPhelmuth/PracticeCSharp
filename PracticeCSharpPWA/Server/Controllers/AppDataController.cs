@@ -32,8 +32,12 @@ namespace PracticeCSharpPWA.Server.Controllers
         private async Task<string> ReadJsonFile(string filename)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = assembly.GetManifestResourceNames().Single(s => s.EndsWith(filename));
+            var resourceName = assembly.GetManifestResourceNames().SingleOrDefault(s => s.EndsWith(filename));
             // Should be: PracticeCSharpPWA.Server.ChallengeData1.json
+            if (string.IsNullOrEmpty(resourceName))
+            {
+                return null;
+            }
             Console.WriteLine($"file found: {resourceName}");
             await using var stream = assembly.GetManifestResourceStream(resourceName);
             using var sr = new StreamReader(stream ?? new MemoryStream());
