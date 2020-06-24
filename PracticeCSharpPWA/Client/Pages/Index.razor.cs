@@ -22,20 +22,21 @@ namespace PracticeCSharpPWA.Client.Pages
         private bool isPageReady;
         protected override async Task OnInitializedAsync()
         {
-            //var challengeString = await Http.GetStringAsync("api/appData/code");
-            //if (string.IsNullOrEmpty(challengeString) || challengeString.Contains("html>"))
-            // {
-            var challengeString = await Http.GetStringAsync("ChallengeData1.json");
-            //Console.WriteLine("Server retrieval failed. Code data retrieved from client.");
-            // }
+            var challengeString = await Http.GetStringAsync("api/appData/code");
+            if (string.IsNullOrEmpty(challengeString) || challengeString.Contains("html>"))
+            {
+                challengeString = await Http.GetStringAsync("ChallengeData1.json");
+                Console.WriteLine("Server retrieval failed. Code data retrieved from client.");
+            }
 
             var codeChallenges = JsonConvert.DeserializeObject<CodeChallenges>(challengeString);
-            var videosString = await Http.GetStringAsync("VideoList1.json");/*videosString = await Http.GetStringAsync("api/appData/videos");*/
-            //if (string.IsNullOrEmpty(videosString) || challengeString.Contains("html>"))
-            //{
-            //    videosString = await Http.GetStringAsync("VideoList1.json");
-            //    Console.WriteLine("Server retrieval failed. Videos data retrieved from client.");
-            //}
+            //var /*videosString =*//* await Http.GetStringAsync("VideoList1.json");*/
+            var videosString = await Http.GetStringAsync("api/appData/videos");
+            if (string.IsNullOrEmpty(videosString) || challengeString.Contains("html>"))
+            {
+                videosString = await Http.GetStringAsync("VideoList1.json");
+                Console.WriteLine("Server retrieval failed. Videos data retrieved from client.");
+            }
             var videos = JsonConvert.DeserializeObject<Videos>(videosString);
             var refs = AppDomain.CurrentDomain.GetAssemblies();
             var assemblyRefs = new List<MetadataReference>();
