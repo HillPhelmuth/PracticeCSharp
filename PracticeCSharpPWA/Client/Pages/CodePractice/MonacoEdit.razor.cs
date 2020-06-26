@@ -14,8 +14,6 @@ namespace PracticeCSharpPWA.Client.Pages.CodePractice
         [Inject]
         public IJSRuntime jsRuntime { get; set; }
         [Inject]
-        protected HttpClient Http { get; set; }
-        [Inject]
         public CodeEditorService CodeEditorService { get; set; }
         protected bool IsCodeReady { get; set; }
         protected MonacoEditor Editor { get; set; }

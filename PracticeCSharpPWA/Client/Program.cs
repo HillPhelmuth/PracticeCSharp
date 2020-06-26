@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PracticeCSharpPWA.Shared;
 using PracticeCSharpPWA.Shared.Models.CodeEditorModels;
-using PracticeCSharpPWA.Shared.Models.FlashCardModels;
+//using PracticeCSharpPWA.Shared.Models.FlashCardModels;
 
 namespace PracticeCSharpPWA.Client
 {
@@ -21,7 +21,7 @@ namespace PracticeCSharpPWA.Client
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddSingleton<DeckStateService>();
+            //builder.Services.AddSingleton<DeckStateService>();
             builder.Services.AddSingleton<CodeEditorService>();
             builder.Services.AddSingleton<CompilerService>();
             builder.Services.AddSingleton<AppStateService>();

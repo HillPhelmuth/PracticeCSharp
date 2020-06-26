@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\FlashCardModels\**" />
+    <EmbeddedResource Remove="Models\FlashCardModels\**" />
+    <None Remove="Models\FlashCardModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ExtensionMethods\FlashCardExtensions.cs" />
+    <Compile Remove="Models\NewsModel.cs" />
+    <Compile Remove="Models\QueryModel.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -12,5 +21,8 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.6.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExtensionMethods\" />
   </ItemGroup>
 </Project>

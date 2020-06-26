@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\CardQuiz\**" />
+    <Content Remove="Pages\CardQuiz\**" />
+    <EmbeddedResource Remove="Pages\CardQuiz\**" />
+    <None Remove="Pages\CardQuiz\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Shared\FlashCardComponentBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Pages\Counter.razor" />
     <Content Remove="Pages\FetchData.razor" />
     <Content Remove="wwwroot\ChallengeData1.json" />
